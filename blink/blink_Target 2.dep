@@ -1,0 +1,2 @@
+Dependencies for Project 'blink', Target 'Target 2': (DO NOT MODIFY !)
+F (.\blink.s)(0x58AE3268)(--cpu Cortex-M4.fp -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC43xx --list "blink.lst" --xref -o "blink.o" --depend "blink.d")

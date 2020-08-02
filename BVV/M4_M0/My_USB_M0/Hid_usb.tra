@@ -1,0 +1,26 @@
+*** Creating Trace Output File 'Hid_usb.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup_lpc43xx.o"'
+### List of Objects: adding '"hid_desc.o"'
+### List of Objects: adding '"hid_generic.o"'
+### List of Objects: adding '"hid_main.o"'
+### List of Objects: adding '"sysinit.o"'
+### List of Objects: adding '".\Dependence\lib\lib_lpc_chip_43xx_m0.lib"'
+### List of Objects: adding '".\Dependence\lib\lib_lpc_board_keil_mcb_4357_m0.lib"'
+### ADS-LD Command completed:
+--cpu Cortex-M0 "startup_lpc43xx.o" "hid_desc.o" "hid_generic.o" "hid_main.o" "sysinit.o" E:\Projects\BVV\M4_M0\My_USB_M0\Dependence\lib\lib_lpc_chip_43xx_m0.lib E:\Projects\BVV\M4_M0\My_USB_M0\Dependence\lib\lib_lpc_board_keil_mcb_4357_m0.lib 
+--strict --scatter "Hid_usb.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Hid_usb.map" -o Hid_usb.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'Hid_usb.axf'
+### ADS-LD Command File: 'Hid_usb.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'Hid_usb.lnp', Handle=0x00000CE4
+### Writing '.lnp' file
+### ADS-LD Command file 'Hid_usb.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,5 @@
+--cpu Cortex-M4 "startup_lpc43xx.o" "hid_main.o" "sysinit.o" E:\Projects\43xxLED_only\Dependence\lib\lib_lpc_board_keil_mcb_4357.lib E:\Projects\43xxLED_only\Dependence\lib\lib_lpc_chip_43xx.lib 
+--strict --scatter "4357LED.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\4357LED.map" -o 4357LED.axf

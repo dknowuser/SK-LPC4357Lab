@@ -1,0 +1,27 @@
+*** Creating Trace Output File 'M4_Start.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"blinky_m4.o"'
+### List of Objects: adding '"sysinit.o"'
+### List of Objects: adding '"keil_startup_lpc18xx43xx.o"'
+### List of Objects: adding '"ipc_example.o"'
+### List of Objects: adding '"m0_img_ldr.o"'
+### List of Objects: adding '"ipc_msg.o"'
+### List of Objects: adding '".\Dependence\lib\lib_lpc_chip_43xx.lib"'
+### List of Objects: adding '".\Dependence\lib\lib_lpc_board_keil_mcb_4357.lib"'
+### ADS-LD Command completed:
+--cpu Cortex-M4.fp "blinky_m4.o" "sysinit.o" "keil_startup_lpc18xx43xx.o" "ipc_example.o" "m0_img_ldr.o" "ipc_msg.o" E:\Projects\BVV\M4_M0\My_USB_M4\Dependence\lib\lib_lpc_chip_43xx.lib E:\Projects\BVV\M4_M0\My_USB_M4\Dependence\lib\lib_lpc_board_keil_mcb_4357.lib 
+--strict --scatter "M4_Start.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\M4_Start.map" -o M4_Start.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'M4_Start.axf'
+### ADS-LD Command File: 'M4_Start.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'M4_Start.lnp', Handle=0x00000F7C
+### Writing '.lnp' file
+### ADS-LD Command file 'M4_Start.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

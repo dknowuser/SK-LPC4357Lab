@@ -1,0 +1,5 @@
+--cpu Cortex-M4.fp "sgpio.o" "table.o" 
+--strict --scatter "SGPIO.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\SGPIO.map" -o SGPIO.axf

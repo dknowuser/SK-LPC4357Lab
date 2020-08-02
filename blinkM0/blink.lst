@@ -1,0 +1,552 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000 00000FE0 
+                       Delay   EQU              4064
+    2 00000000 400F6218 
+                       GPIOSET EQU              0x400F6218
+    3 00000000 400F6298 
+                       GPIOCLR EQU              0x400F6298
+    4 00000000 400F6018 
+                       GPIO6DIR
+                               EQU              0x400F6018
+    5 00000000 400F6098 
+                       GPIO6MASK
+                               EQU              0x400F6098
+    6 00000000 40086630 
+                       SCU_PC_12
+                               EQU              0x40086630
+    7 00000000 40044FD8 
+                       CLR_EN  EQU              0x40044FD8
+    8 00000000 40044FE8 
+                       CLR_STAT
+                               EQU              0x40044FE8
+    9 00000000 40053100 
+                       RESET_CTRL0
+                               EQU              0x40053100
+   10 00000000 40053104 
+                       RESET_CTRL1
+                               EQU              0x40053104
+   11 00000000 40053110 
+                       RESET_STATUS0
+                               EQU              0x40053110
+   12 00000000 4005311C 
+                       RESET_STATUS3
+                               EQU              0x4005311C
+   13 00000000 40053154 
+                       RESET_ACTIVE_STATUS1
+                               EQU              0x40053154
+   14 00000000         
+   15 00000000 5A5A5A5A 
+                       Sign_Value
+                               EQU              0x5A5A5A5A
+   16 00000000 00000400 
+                       STACK_SIZE
+                               EQU              0x400
+   17 00000000         
+   18 00000000                 EXPORT           STACK_SIZE [WEAK]
+   19 00000000                 EXPORT           Reset_Handler [WEAK]
+   20 00000000                 EXPORT           NMI_Handler [WEAK]
+   21 00000000                 EXPORT           HardFault_Handler [WEAK]
+   22 00000000                 EXPORT           MemManage_Handler [WEAK]
+   23 00000000                 EXPORT           BusFault_Handler [WEAK]
+   24 00000000                 EXPORT           UsageFault_Handler [WEAK]
+   25 00000000                 EXPORT           Sign_Value [WEAK]
+   26 00000000                 EXPORT           SVC_Handler [WEAK]
+   27 00000000                 EXPORT           DebugMon_Handler [WEAK]
+   28 00000000                 EXPORT           PendSV_Handler [WEAK]
+   29 00000000                 EXPORT           SysTick_Handler [WEAK]
+   30 00000000         
+   31 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
+=3
+   32 00000000         Stack_Mem
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                               SPACE            STACK_SIZE
+   33 00000400         __initial_sp
+   34 00000400         
+   35 00000400                 AREA             beg, CODE, READONLY
+   36 00000000                 ENTRY
+   37 00000000         
+   38 00000000         Reset_Handler
+                               PROC
+   39 00000000         
+   40 00000000         ;Initialize M0 core
+   41 00000000 4820            ldr              r0,=RESET_CTRL0
+   42 00000002 F04F 0100       mov              r1, 0x0
+   43 00000006 6001            str              r1, [r0]
+   44 00000008         
+   45 00000008 481F            ldr              r0,=RESET_CTRL1
+   46 0000000A F04F 0100       mov              r1, 0x0
+   47 0000000E 6001            str              r1, [r0]
+   48 00000010         
+   49 00000010 481E            ldr              r0,=RESET_STATUS3
+   50 00000012 6802            ldr              r2, [r0]
+   51 00000014 491E            ldr              r1,=0xFFFCFFFF
+   52 00000016 EA01 0102       and              r1, r1, r2
+   53 0000001A 6001            str              r1, [r0]
+   54 0000001C         
+   55 0000001C 481D            ldr              r0,=CLR_EN  ;
+   56 0000001E F04F 31FF       ldr              r1,=0xFFFFFFFF ;
+   57 00000022 6001            str              r1, [r0]    ;
+   58 00000024         
+   59 00000024 481C            ldr              r0,=CLR_STAT ;
+   60 00000026 F04F 31FF       ldr              r1,=0xFFFFFFFF ;
+   61 0000002A 6001            str              r1, [r0]    ;
+   62 0000002C         
+   63 0000002C         ;Initialise GPIOs
+   64 0000002C 481B            ldr              r0,=SCU_PC_12 ;
+   65 0000002E F04F 0124       mov              r1, 0x24    ;
+   66 00000032 6001            str              r1, [r0]    ; 
+   67 00000034         
+   68 00000034         ;Set output direction for GPIO6
+   69 00000034 481A            ldr              r0,=GPIO6DIR ;
+   70 00000036 F44F 6100       mov              r1, 0x800   ;
+   71 0000003A 6001            str              r1, [r0]    ;
+   72 0000003C         
+   73 0000003C         ;Set mask for GPIO
+   74 0000003C 4819            ldr              r0,=GPIO6MASK ;
+   75 0000003E F04F 0100       mov              r1, #0      ;
+   76 00000042 6001            str              r1, [r0]    ;
+   77 00000044         
+   78 00000044         ;Main loop
+   79 00000044         lp
+   80 00000044 4818            ldr              r0,=GPIOSET ;
+   81 00000046 6801            ldr              r1, [r0]    ;
+   82 00000048 F5B1 6100       subs             r1, 0x800   ;
+   83 0000004C D003            beq              led_off     ;
+   84 0000004E         ;Turn the LED on
+   85 0000004E F44F 6100       mov              r1, 0x800   ;
+   86 00000052 6001            str              r1, [r0]    ;
+   87 00000054         
+   88 00000054 E003            b                delay       ;
+   89 00000056         ;Turn the LED off
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   90 00000056         led_off
+   91 00000056 4815            ldr              r0,=GPIOCLR ;
+   92 00000058 F44F 6100       mov              r1, 0x800   ;
+   93 0000005C 6001            str              r1, [r0]    ;
+   94 0000005E         
+   95 0000005E         delay
+   96 0000005E         ;Make delay
+   97 0000005E F44F 637E       mov              r3, #Delay  ;
+   98 00000062         
+   99 00000062         continue2
+  100 00000062 F44F 607E       mov              r0, #Delay  ;
+  101 00000066         continue1
+  102 00000066 1E40            subs             r0, r0, 0x1 ;
+  103 00000068 D1FD            bne              continue1   ;
+  104 0000006A         
+  105 0000006A 1E5B            subs             r3, r3, 0x1 ;
+  106 0000006C D1F9            bne              continue2   ;
+  107 0000006E         
+  108 0000006E E7E9            b                lp
+  109 00000070         
+  110 00000070                 ENDP
+  111 00000070         
+  112 00000070         NMI_Handler
+                               PROC
+  113 00000070 E7FE            b                Reset_Handler
+  114 00000072                 ENDP
+  115 00000072         
+  116 00000072         HardFault_Handler
+                               PROC
+  117 00000072 E7FE            b                Reset_Handler
+  118 00000074                 ENDP
+  119 00000074         
+  120 00000074         MemManage_Handler
+                               PROC
+  121 00000074 E7FE            b                Reset_Handler
+  122 00000076                 ENDP
+  123 00000076         
+  124 00000076         BusFault_Handler
+                               PROC
+  125 00000076 E7FE            b                Reset_Handler
+  126 00000078                 ENDP
+  127 00000078         
+  128 00000078         UsageFault_Handler
+                               PROC
+  129 00000078 E7FE            b                Reset_Handler
+  130 0000007A                 ENDP
+  131 0000007A         
+  132 0000007A         SVC_Handler
+                               PROC
+  133 0000007A E7FE            b                Reset_Handler
+  134 0000007C                 ENDP
+  135 0000007C         
+  136 0000007C         DebugMon_Handler
+                               PROC
+  137 0000007C E7FE            b                Reset_Handler
+  138 0000007E                 ENDP
+  139 0000007E         
+  140 0000007E         PendSV_Handler
+                               PROC
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+  141 0000007E E7FE            b                Reset_Handler
+  142 00000080                 ENDP
+  143 00000080         
+  144 00000080         SysTick_Handler
+                               PROC
+  145 00000080 E7FE            b                Reset_Handler
+  146 00000082                 ENDP
+  147 00000082                 END
+              00 00 40053100 
+              40053104 
+              4005311C 
+              FFFCFFFF 
+              40044FD8 
+              40044FE8 
+              40086630 
+              400F6018 
+              400F6098 
+              400F6218 
+              400F6298 
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=blink
+.d -oblink.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\I
+nc\NXP\LPC43xx --list=blink.lst blink.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STACK 00000000
+
+Symbol: STACK
+   Definitions
+      At line 31 in file blink.s
+   Uses
+      None
+Comment: STACK unused
+Stack_Mem 00000000
+
+Symbol: Stack_Mem
+   Definitions
+      At line 32 in file blink.s
+   Uses
+      None
+Comment: Stack_Mem unused
+__initial_sp 00000400
+
+Symbol: __initial_sp
+   Definitions
+      At line 33 in file blink.s
+   Uses
+      None
+Comment: __initial_sp unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BusFault_Handler 00000076
+
+Symbol: BusFault_Handler
+   Definitions
+      At line 124 in file blink.s
+   Uses
+      At line 23 in file blink.s
+Comment: BusFault_Handler used once
+DebugMon_Handler 0000007C
+
+Symbol: DebugMon_Handler
+   Definitions
+      At line 136 in file blink.s
+   Uses
+      At line 27 in file blink.s
+Comment: DebugMon_Handler used once
+HardFault_Handler 00000072
+
+Symbol: HardFault_Handler
+   Definitions
+      At line 116 in file blink.s
+   Uses
+      At line 21 in file blink.s
+Comment: HardFault_Handler used once
+MemManage_Handler 00000074
+
+Symbol: MemManage_Handler
+   Definitions
+      At line 120 in file blink.s
+   Uses
+      At line 22 in file blink.s
+Comment: MemManage_Handler used once
+NMI_Handler 00000070
+
+Symbol: NMI_Handler
+   Definitions
+      At line 112 in file blink.s
+   Uses
+      At line 20 in file blink.s
+Comment: NMI_Handler used once
+PendSV_Handler 0000007E
+
+Symbol: PendSV_Handler
+   Definitions
+      At line 140 in file blink.s
+   Uses
+      At line 28 in file blink.s
+Comment: PendSV_Handler used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 38 in file blink.s
+   Uses
+      At line 19 in file blink.s
+      At line 113 in file blink.s
+      At line 117 in file blink.s
+      At line 121 in file blink.s
+      At line 125 in file blink.s
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 129 in file blink.s
+      At line 133 in file blink.s
+      At line 137 in file blink.s
+      At line 141 in file blink.s
+      At line 145 in file blink.s
+
+SVC_Handler 0000007A
+
+Symbol: SVC_Handler
+   Definitions
+      At line 132 in file blink.s
+   Uses
+      At line 26 in file blink.s
+Comment: SVC_Handler used once
+SysTick_Handler 00000080
+
+Symbol: SysTick_Handler
+   Definitions
+      At line 144 in file blink.s
+   Uses
+      At line 29 in file blink.s
+Comment: SysTick_Handler used once
+UsageFault_Handler 00000078
+
+Symbol: UsageFault_Handler
+   Definitions
+      At line 128 in file blink.s
+   Uses
+      At line 24 in file blink.s
+Comment: UsageFault_Handler used once
+beg 00000000
+
+Symbol: beg
+   Definitions
+      At line 35 in file blink.s
+   Uses
+      None
+Comment: beg unused
+continue1 00000066
+
+Symbol: continue1
+   Definitions
+      At line 101 in file blink.s
+   Uses
+      At line 103 in file blink.s
+Comment: continue1 used once
+continue2 00000062
+
+Symbol: continue2
+   Definitions
+      At line 99 in file blink.s
+   Uses
+      At line 106 in file blink.s
+Comment: continue2 used once
+delay 0000005E
+
+Symbol: delay
+   Definitions
+      At line 95 in file blink.s
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+   Uses
+      At line 88 in file blink.s
+Comment: delay used once
+led_off 00000056
+
+Symbol: led_off
+   Definitions
+      At line 90 in file blink.s
+   Uses
+      At line 83 in file blink.s
+Comment: led_off used once
+lp 00000044
+
+Symbol: lp
+   Definitions
+      At line 79 in file blink.s
+   Uses
+      At line 108 in file blink.s
+Comment: lp used once
+16 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+CLR_EN 40044FD8
+
+Symbol: CLR_EN
+   Definitions
+      At line 7 in file blink.s
+   Uses
+      At line 55 in file blink.s
+Comment: CLR_EN used once
+CLR_STAT 40044FE8
+
+Symbol: CLR_STAT
+   Definitions
+      At line 8 in file blink.s
+   Uses
+      At line 59 in file blink.s
+Comment: CLR_STAT used once
+Delay 00000FE0
+
+Symbol: Delay
+   Definitions
+      At line 1 in file blink.s
+   Uses
+      At line 97 in file blink.s
+      At line 100 in file blink.s
+
+GPIO6DIR 400F6018
+
+Symbol: GPIO6DIR
+   Definitions
+      At line 4 in file blink.s
+   Uses
+      At line 69 in file blink.s
+Comment: GPIO6DIR used once
+GPIO6MASK 400F6098
+
+Symbol: GPIO6MASK
+   Definitions
+      At line 5 in file blink.s
+   Uses
+      At line 74 in file blink.s
+Comment: GPIO6MASK used once
+GPIOCLR 400F6298
+
+Symbol: GPIOCLR
+   Definitions
+      At line 3 in file blink.s
+   Uses
+      At line 91 in file blink.s
+Comment: GPIOCLR used once
+GPIOSET 400F6218
+
+Symbol: GPIOSET
+   Definitions
+      At line 2 in file blink.s
+   Uses
+      At line 80 in file blink.s
+Comment: GPIOSET used once
+RESET_ACTIVE_STATUS1 40053154
+
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+Symbol: RESET_ACTIVE_STATUS1
+   Definitions
+      At line 13 in file blink.s
+   Uses
+      None
+Comment: RESET_ACTIVE_STATUS1 unused
+RESET_CTRL0 40053100
+
+Symbol: RESET_CTRL0
+   Definitions
+      At line 9 in file blink.s
+   Uses
+      At line 41 in file blink.s
+Comment: RESET_CTRL0 used once
+RESET_CTRL1 40053104
+
+Symbol: RESET_CTRL1
+   Definitions
+      At line 10 in file blink.s
+   Uses
+      At line 45 in file blink.s
+Comment: RESET_CTRL1 used once
+RESET_STATUS0 40053110
+
+Symbol: RESET_STATUS0
+   Definitions
+      At line 11 in file blink.s
+   Uses
+      None
+Comment: RESET_STATUS0 unused
+RESET_STATUS3 4005311C
+
+Symbol: RESET_STATUS3
+   Definitions
+      At line 12 in file blink.s
+   Uses
+      At line 49 in file blink.s
+Comment: RESET_STATUS3 used once
+SCU_PC_12 40086630
+
+Symbol: SCU_PC_12
+   Definitions
+      At line 6 in file blink.s
+   Uses
+      At line 64 in file blink.s
+Comment: SCU_PC_12 used once
+STACK_SIZE 00000400
+
+Symbol: STACK_SIZE
+   Definitions
+      At line 16 in file blink.s
+   Uses
+      At line 18 in file blink.s
+      At line 32 in file blink.s
+
+Sign_Value 5A5A5A5A
+
+Symbol: Sign_Value
+   Definitions
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Absolute symbols
+
+      At line 15 in file blink.s
+   Uses
+      At line 25 in file blink.s
+Comment: Sign_Value used once
+15 symbols
+367 symbols in table

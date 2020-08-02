@@ -1,0 +1,5 @@
+--cpu Cortex-M4.fp "blinky_m4.o" "sysinit.o" "keil_startup_lpc18xx43xx.o" "ipc_example.o" "m0_img_ldr.o" "ipc_msg.o" E:\Projects\BVV\M4_M0\My_USB_M4\Dependence\lib\lib_lpc_chip_43xx.lib E:\Projects\BVV\M4_M0\My_USB_M4\Dependence\lib\lib_lpc_board_keil_mcb_4357.lib 
+--strict --scatter "M4_Start.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\M4_Start.map" -o M4_Start.axf

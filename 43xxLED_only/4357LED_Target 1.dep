@@ -1,0 +1,77 @@
+Dependencies for Project '4357LED', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_LPC43xx.s)(0x58AE0BA1)(--cpu Cortex-M4 -g --apcs=interwork -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC43xx --list "startup_LPC43xx.lst" --xref -o "startup_LPC43xx.o" --depend "startup_LPC43xx.d")
+F (.\src\hid_main.c)(0x58AB6DD5)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork -I.\Dependence -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC43xx -DCORE_M4 -o "hid_main.o" --omf_browse "hid_main.crf" --depend "hid_main.d")
+I (.\Dependence\board.h)(0x54D230B0)
+I (.\Dependence\chip.h)(0x54D4D1BA)
+I (.\Dependence\sys_config.h)(0x52734DFC)
+I (.\Dependence\cmsis.h)(0x54D4D028)
+I (.\Dependence\lpc_types.h)(0x52F316FA)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x516EC836)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h)(0x516EC836)
+I (.\Dependence\cmsis_43xx.h)(0x58DAA30F)
+I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x515E6F04)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x515E6F04)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x515E6F04)
+I (C:\Keil\ARM\CMSIS\Include\core_cm4_simd.h)(0x515E6F04)
+I (.\Dependence\chip_lpc43xx.h)(0x54D4CE82)
+I (.\Dependence\scu_18xx_43xx.h)(0x530CA6E2)
+I (.\Dependence\clock_18xx_43xx.h)(0x52789AAA)
+I (.\Dependence\cguccu_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\chip_clocks.h)(0x52734DFC)
+I (.\Dependence\creg_18xx_43xx.h)(0x52CBFA8E)
+I (.\Dependence\otp_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\sdif_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\i2c_18xx_43xx.h)(0x530CA6E2)
+I (.\Dependence\i2c_common_18xx_43xx.h)(0x529DB0E8)
+I (.\Dependence\i2s_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\lcd_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\ssp_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\uart_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\ring_buffer.h)(0x52F316FA)
+I (.\Dependence\romapi_18xx_43xx.h)(0x52DD3A1C)
+I (.\Dependence\iap_18xx_43xx.h)(0x530CA6E2)
+I (.\Dependence\error.h)(0x52FCDE4A)
+I (.\Dependence\fpu_init.h)(0x52A03560)
+I (.\Dependence\board_api.h)(0x52F316F8)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
+I (.\Dependence\lpc_phy.h)(0x52F316F8)
+I (.\Dependence\uda1380.h)(0x52734DF8)
+I (.\Dependence\gpio_18xx_43xx.h)(0x52BD6BF4)
+F (.\src\sysinit.c)(0x54D4CC16)(-c --cpu Cortex-M4 -g -O0 --apcs=interwork -I.\Dependence -I C:\Keil\ARM\RV31\INC -I C:\Keil\ARM\CMSIS\Include -I C:\Keil\ARM\Inc\NXP\LPC43xx -DCORE_M4 -o "sysinit.o" --omf_browse "sysinit.crf" --depend "sysinit.d")
+I (.\Dependence\board.h)(0x54D230B0)
+I (.\Dependence\chip.h)(0x54D4D1BA)
+I (.\Dependence\sys_config.h)(0x52734DFC)
+I (.\Dependence\cmsis.h)(0x54D4D028)
+I (.\Dependence\lpc_types.h)(0x52F316FA)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdint.h)(0x516EC836)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdbool.h)(0x516EC836)
+I (.\Dependence\cmsis_43xx.h)(0x58DAA30F)
+I (C:\Keil\ARM\CMSIS\Include\core_cm4.h)(0x515E6F04)
+I (C:\Keil\ARM\CMSIS\Include\core_cmInstr.h)(0x515E6F04)
+I (C:\Keil\ARM\CMSIS\Include\core_cmFunc.h)(0x515E6F04)
+I (C:\Keil\ARM\CMSIS\Include\core_cm4_simd.h)(0x515E6F04)
+I (.\Dependence\chip_lpc43xx.h)(0x54D4CE82)
+I (.\Dependence\scu_18xx_43xx.h)(0x530CA6E2)
+I (.\Dependence\clock_18xx_43xx.h)(0x52789AAA)
+I (.\Dependence\cguccu_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\chip_clocks.h)(0x52734DFC)
+I (.\Dependence\creg_18xx_43xx.h)(0x52CBFA8E)
+I (.\Dependence\otp_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\sdif_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\i2c_18xx_43xx.h)(0x530CA6E2)
+I (.\Dependence\i2c_common_18xx_43xx.h)(0x529DB0E8)
+I (.\Dependence\i2s_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\lcd_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\ssp_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\uart_18xx_43xx.h)(0x52734DFC)
+I (.\Dependence\ring_buffer.h)(0x52F316FA)
+I (.\Dependence\romapi_18xx_43xx.h)(0x52DD3A1C)
+I (.\Dependence\iap_18xx_43xx.h)(0x530CA6E2)
+I (.\Dependence\error.h)(0x52FCDE4A)
+I (.\Dependence\fpu_init.h)(0x52A03560)
+I (.\Dependence\board_api.h)(0x52F316F8)
+I (C:\Keil\ARM\ARMCC\bin\..\include\stdio.h)(0x516EC836)
+I (.\Dependence\lpc_phy.h)(0x52F316F8)
+I (.\Dependence\uda1380.h)(0x52734DF8)
+F (.\Dependence\lib\lib_lpc_board_keil_mcb_4357.lib)(0x54B4F31C)()
+F (.\Dependence\lib\lib_lpc_chip_43xx.lib)(0x54B4F2D2)()

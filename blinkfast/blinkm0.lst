@@ -1,0 +1,140 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000 40053100 
+                       RESET_CTRL0_M0_SUB_RST
+                               EQU              0x40053100
+    2 00000000 40053104 
+                       RESET_CTRL1_M1_M0APP_RST
+                               EQU              0x40053104
+    3 00000000 40053110 
+                       RESET_STATUS0
+                               EQU              0x40053110
+    4 00000000 40053150 
+                       RGU     EQU              0x40053150
+    5 00000000         
+    6 00000000                 AREA             RESET, DATA, READONLY
+    7 00000000 00000000        dcd              Reset_Handler ;
+    8 00000004 00000000        dcd              Reset_Handler ;
+    9 00000008         
+   10 00000008                 AREA             beg, CODE, READONLY
+   11 00000000         Reset_Handler
+                               PROC
+   12 00000000         ;Set up M0-coprocessor
+   13 00000000 4808            ldr              r0,=RESET_CTRL0_M0_SUB_RST ;
+   14 00000002 F04F 0100       mov              r1, 0x0     ;
+   15 00000006 6001            str              r1, [r0]    ;
+   16 00000008         
+   17 00000008 4807            ldr              r0,=RESET_CTRL1_M1_M0APP_RST ;
+   18 0000000A F04F 0100       mov              r1, 0x0     ;
+   19 0000000E 6001            str              r1, [r0]    ;
+   20 00000010         
+   21 00000010 4806            ldr              r0,=RESET_STATUS0 ;
+   22 00000012 F04F 0100       mov              r1, 0x0     ;
+   23 00000016 6001            str              r1, [r0]    ;
+   24 00000018         
+   25 00000018 4805            ldr              r0,=RGU     ;
+   26 0000001A F04F 31FF       mov              r1, 0xFFFFFFFF ;
+   27 0000001E 6001            str              r1, [r0]    ;
+   28 00000020         
+   29 00000020         ;Infinite loop
+   30 00000020 E7FE    lbl     b                lbl         ; 
+   31 00000022                 ENDP
+   32 00000022                 END
+              00 00 40053100 
+              40053104 
+              40053110 
+              40053150 
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=blink
+m0.d -oblinkm0.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\A
+RM\Inc\NXP\LPC43xx --list=blinkm0.lst blinkm0.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 6 in file blinkm0.s
+   Uses
+      None
+Comment: RESET unused
+1 symbol
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 11 in file blinkm0.s
+   Uses
+      At line 7 in file blinkm0.s
+      At line 8 in file blinkm0.s
+
+beg 00000000
+
+Symbol: beg
+   Definitions
+      At line 10 in file blinkm0.s
+   Uses
+      None
+Comment: beg unused
+lbl 00000020
+
+Symbol: lbl
+   Definitions
+      At line 30 in file blinkm0.s
+   Uses
+      At line 30 in file blinkm0.s
+Comment: lbl used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+RESET_CTRL0_M0_SUB_RST 40053100
+
+Symbol: RESET_CTRL0_M0_SUB_RST
+   Definitions
+      At line 1 in file blinkm0.s
+   Uses
+      At line 13 in file blinkm0.s
+Comment: RESET_CTRL0_M0_SUB_RST used once
+RESET_CTRL1_M1_M0APP_RST 40053104
+
+Symbol: RESET_CTRL1_M1_M0APP_RST
+   Definitions
+      At line 2 in file blinkm0.s
+   Uses
+      At line 17 in file blinkm0.s
+Comment: RESET_CTRL1_M1_M0APP_RST used once
+RESET_STATUS0 40053110
+
+Symbol: RESET_STATUS0
+   Definitions
+      At line 3 in file blinkm0.s
+   Uses
+      At line 21 in file blinkm0.s
+Comment: RESET_STATUS0 used once
+RGU 40053150
+
+Symbol: RGU
+   Definitions
+      At line 4 in file blinkm0.s
+   Uses
+      At line 25 in file blinkm0.s
+Comment: RGU used once
+4 symbols
+341 symbols in table

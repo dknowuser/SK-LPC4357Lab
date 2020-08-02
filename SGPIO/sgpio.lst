@@ -1,0 +1,1528 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000 00010000 
+                       DELAY_BEFORE_START
+                               EQU              0x00010000
+    2 00000000 5A5A5A5A 
+                       Sign_Value
+                               EQU              0x5A5A5A5A
+    3 00000000 00000400 
+                       STACK_SIZE
+                               EQU              0x00000400
+    4 00000000         
+    5 00000000 4008608C 
+                       SCU_P1_3
+                               EQU              0x4008608C
+    6 00000000 40086090 
+                       SCU_P1_4
+                               EQU              0x40086090
+    7 00000000 40086094 
+                       SCU_P1_5
+                               EQU              0x40086094
+    8 00000000 4008630C 
+                       SCU_P6_3
+                               EQU              0x4008630C
+    9 00000000 40086318 
+                       SCU_P6_6
+                               EQU              0x40086318
+   10 00000000 4008639C 
+                       SCU_P7_7
+                               EQU              0x4008639C
+   11 00000000 40086784 
+                       SCU_PF_1
+                               EQU              0x40086784
+   12 00000000 40086788 
+                       SCU_PF_2
+                               EQU              0x40086788
+   13 00000000         
+   14 00000000 40101000 
+                       OUT_MUX_CFG0
+                               EQU              0x40101000
+   15 00000000 40101004 
+                       OUT_MUX_CFG1
+                               EQU              0x40101004
+   16 00000000 40101010 
+                       OUT_MUX_CFG4
+                               EQU              0x40101010
+   17 00000000 40101014 
+                       OUT_MUX_CFG5
+                               EQU              0x40101014
+   18 00000000 4010101C 
+                       OUT_MUX_CFG7
+                               EQU              0x4010101C
+   19 00000000 40101028 
+                       OUT_MUX_CFG10
+                               EQU              0x40101028
+   20 00000000 4010102C 
+                       OUT_MUX_CFG11
+                               EQU              0x4010102C
+   21 00000000 4010103C 
+                       OUT_MUX_CFG15
+                               EQU              0x4010103C
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   22 00000000         
+   23 00000000 40101080 
+                       SLICE_MUX_CFG0
+                               EQU              0x40101080
+   24 00000000 40101084 
+                       SLICE_MUX_CFG1
+                               EQU              0x40101084
+   25 00000000 40101090 
+                       SLICE_MUX_CFG4
+                               EQU              0x40101090
+   26 00000000 40101094 
+                       SLICE_MUX_CFG5
+                               EQU              0x40101094
+   27 00000000 4010109C 
+                       SLICE_MUX_CFG7
+                               EQU              0x4010109C
+   28 00000000 401010A8 
+                       SLICE_MUX_CFG10
+                               EQU              0x401010A8
+   29 00000000 401010AC 
+                       SLICE_MUX_CFG11
+                               EQU              0x401010AC
+   30 00000000 401010BC 
+                       SLICE_MUX_CFG15
+                               EQU              0x401010BC
+   31 00000000         
+   32 00000000 40101040 
+                       SGPIO_MUX_CFGA
+                               EQU              0x40101040
+   33 00000000 40101048 
+                       SGPIO_MUX_CFGC
+                               EQU              0x40101048
+   34 00000000 40101058 
+                       SGPIO_MUX_CFGG
+                               EQU              0x40101058
+   35 00000000 40101060 
+                       SGPIO_MUX_CFGI
+                               EQU              0x40101060
+   36 00000000 40101068 
+                       SGPIO_MUX_CFGK
+                               EQU              0x40101068
+   37 00000000 4010106C 
+                       SGPIO_MUX_CFGL
+                               EQU              0x4010106C
+   38 00000000 40101074 
+                       SGPIO_MUX_CFGN
+                               EQU              0x40101074
+   39 00000000 4010107C 
+                       SGPIO_MUX_CFGP
+                               EQU              0x4010107C
+   40 00000000         
+   41 00000000 401010C0 
+                       REGA    EQU              0x401010C0  ;SGPIO0
+   42 00000000 401010C8 
+                       REGC    EQU              0x401010C8  ;SGPIO4
+   43 00000000 401010D8 
+                       REGG    EQU              0x401010D8  ;SGPIO10
+   44 00000000 401010E0 
+                       REGI    EQU              0x401010E0  ;SGPIO1
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+   45 00000000 401010E8 
+                       REGK    EQU              0x401010E8  ;SGPIO5
+   46 00000000 401010EC 
+                       REGL    EQU              0x401010EC  ;SGPIO7
+   47 00000000 401010F4 
+                       REGN    EQU              0x401010F4  ;SGPIO11
+   48 00000000 401010FC 
+                       REGP    EQU              0x401010FC  ;SGPIO15
+   49 00000000         
+   50 00000000 40101100 
+                       REGA_SS EQU              0x40101100
+   51 00000000 40101108 
+                       REGC_SS EQU              0x40101108
+   52 00000000 40101118 
+                       REGG_SS EQU              0x40101118
+   53 00000000 40101120 
+                       REGI_SS EQU              0x40101120
+   54 00000000 40101128 
+                       REGK_SS EQU              0x40101128
+   55 00000000 4010112C 
+                       REGL_SS EQU              0x4010112C
+   56 00000000 40101134 
+                       REGN_SS EQU              0x40101134
+   57 00000000 4010113C 
+                       REGP_SS EQU              0x4010113C
+   58 00000000         
+   59 00000000 40101140 
+                       PRESET0 EQU              0x40101140
+   60 00000000 40101148 
+                       PRESET1 EQU              0x40101148
+   61 00000000 40101158 
+                       PRESET4 EQU              0x40101158
+   62 00000000 40101160 
+                       PRESET5 EQU              0x40101160
+   63 00000000 40101168 
+                       PRESET7 EQU              0x40101168
+   64 00000000 4010116C 
+                       PRESET10
+                               EQU              0x4010116C
+   65 00000000 40101174 
+                       PRESET11
+                               EQU              0x40101174
+   66 00000000 4010117C 
+                       PRESET15
+                               EQU              0x4010117C
+   67 00000000         
+   68 00000000 401011C0 
+                       POS0    EQU              0x401011C0
+   69 00000000 401011C8 
+                       POS1    EQU              0x401011C8
+   70 00000000 401011D8 
+                       POS4    EQU              0x401011D8
+   71 00000000 401011E0 
+                       POS5    EQU              0x401011E0
+   72 00000000 401011E8 
+                       POS7    EQU              0x401011E8
+   73 00000000 401011EC 
+                       POS10   EQU              0x401011EC
+   74 00000000 401011F4 
+
+
+
+ARM Macro Assembler    Page 4 
+
+
+                       POS11   EQU              0x401011F4
+   75 00000000 401011FC 
+                       POS15   EQU              0x401011FC
+   76 00000000         
+   77 00000000 4010121C 
+                       CTRL_ENABLED
+                               EQU              0x4010121C
+   78 00000000 40101218 
+                       GPIO_OENREG
+                               EQU              0x40101218
+   79 00000000         
+   80 00000000 00000000 
+                       CONSTANT0
+                               EQU              0x00000000
+   81 00000000 FFFFFFFF 
+                       CONSTANT1
+                               EQU              0xFFFFFFFF
+   82 00000000 55555555 
+                       CONSTANT2
+                               EQU              0x55555555
+   83 00000000 AAAAAAAA 
+                       CONSTANT3
+                               EQU              0xAAAAAAAA
+   84 00000000 50505050 
+                       CONSTANT4
+                               EQU              0x50505050
+   85 00000000 60606060 
+                       CONSTANT5
+                               EQU              0x60606060
+   86 00000000 70707070 
+                       CONSTANT6
+                               EQU              0x70707070
+   87 00000000 80808080 
+                       CONSTANT7
+                               EQU              0x80808080
+   88 00000000         
+   89 00000000                 EXPORT           STACK_SIZE         [WEAK]
+   90 00000000                 EXPORT           Reset_Handler      [WEAK]
+   91 00000000                 EXPORT           NMI_Handler        [WEAK]
+   92 00000000                 EXPORT           HardFault_Handler  [WEAK]
+   93 00000000                 EXPORT           MemManage_Handler  [WEAK]
+   94 00000000                 EXPORT           BusFault_Handler   [WEAK]
+   95 00000000                 EXPORT           UsageFault_Handler [WEAK]
+   96 00000000                 EXPORT           Sign_Value         [WEAK]
+   97 00000000                 EXPORT           SVC_Handler        [WEAK]
+   98 00000000                 EXPORT           DebugMon_Handler   [WEAK]
+   99 00000000                 EXPORT           PendSV_Handler     [WEAK]
+  100 00000000                 EXPORT           SysTick_Handler    [WEAK]
+  101 00000000         
+  102 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
+=3
+  103 00000000         Stack_Mem
+                               SPACE            STACK_SIZE
+  104 00000400         __initial_sp
+  105 00000400         
+  106 00000400                 AREA             beg, CODE, READONLY
+  107 00000000                 ENTRY
+  108 00000000         
+  109 00000000         Reset_Handler
+
+
+
+ARM Macro Assembler    Page 5 
+
+
+                               PROC
+  110 00000000         ;Make delay before actual start (for JTAG)
+  111 00000000 F44F 3080       ldr              r0,=DELAY_BEFORE_START
+  112 00000004         delay
+  113 00000004 3801            subs             r0,#0x01
+  114 00000006 D1FD            bne              delay
+  115 00000008         
+  116 00000008         ;Disable all counters 
+  117 00000008 4862            ldr              r0,=CTRL_ENABLED
+  118 0000000A F04F 0100       ldr              r1,=0x00
+  119 0000000E 6001            str              r1, [r0]
+  120 00000010         
+  121 00000010         ;Enable SGPIO pin outputs
+  122 00000010 4861            ldr              r0,=GPIO_OENREG
+  123 00000012 F648 41B3       ldr              r1,=0x8CB3
+  124 00000016 6001            str              r1, [r0]
+  125 00000018         
+  126 00000018         ;Set up SCUs
+  127 00000018 4860            ldr              r0,=SCU_P1_3
+  128 0000001A F04F 0102       ldr              r1,=0x02
+  129 0000001E 6001            str              r1, [r0]
+  130 00000020         
+  131 00000020 485F            ldr              r0,=SCU_P1_4
+  132 00000022 6001            str              r1, [r0]
+  133 00000024         
+  134 00000024 485F            ldr              r0,=SCU_P6_3
+  135 00000026 6001            str              r1, [r0]
+  136 00000028         
+  137 00000028 485F            ldr              r0,=SCU_P6_6
+  138 0000002A 6001            str              r1, [r0]
+  139 0000002C         
+  140 0000002C 485F            ldr              r0,=SCU_P1_5
+  141 0000002E F04F 0106       ldr              r1,=0x06
+  142 00000032 6001            str              r1, [r0]
+  143 00000034         
+  144 00000034 485E            ldr              r0,=SCU_PF_1
+  145 00000036 6001            str              r1, [r0]
+  146 00000038         
+  147 00000038 485E            ldr              r0,=SCU_PF_2
+  148 0000003A 6001            str              r1, [r0]
+  149 0000003C         
+  150 0000003C 485E            ldr              r0,=SCU_P7_7
+  151 0000003E F04F 0107       ldr              r1,=0x07
+  152 00000042 6001            str              r1, [r0]
+  153 00000044         
+  154 00000044         ;Set up 1-bit mode
+  155 00000044         ;Slice A
+  156 00000044 485D            ldr              r0,=OUT_MUX_CFG0
+  157 00000046         ;ldr r1,=0x05
+  158 00000046 F04F 0100       ldr              r1,=0x00
+  159 0000004A 6001            str              r1, [r0]
+  160 0000004C         
+  161 0000004C         ;Slice C
+  162 0000004C 485C            ldr              r0,=OUT_MUX_CFG4
+  163 0000004E 6001            str              r1, [r0]
+  164 00000050         
+  165 00000050         ;Slice G
+  166 00000050 485C            ldr              r0,=OUT_MUX_CFG10
+  167 00000052 6001            str              r1, [r0]
+
+
+
+ARM Macro Assembler    Page 6 
+
+
+  168 00000054         
+  169 00000054         ;Slice I
+  170 00000054 485C            ldr              r0,=OUT_MUX_CFG1
+  171 00000056         ;ldr r1,=0x06
+  172 00000056 6001            str              r1, [r0]
+  173 00000058         
+  174 00000058         ;Slice K
+  175 00000058 485C            ldr              r0,=OUT_MUX_CFG5
+  176 0000005A 6001            str              r1, [r0]
+  177 0000005C         
+  178 0000005C         ;Slice L 
+  179 0000005C 485C            ldr              r0,=OUT_MUX_CFG7
+  180 0000005E         ;ldr r1,=0x07
+  181 0000005E 6001            str              r1, [r0]
+  182 00000060         
+  183 00000060         ;Slice N
+  184 00000060 485C            ldr              r0,=OUT_MUX_CFG11
+  185 00000062 6001            str              r1, [r0]
+  186 00000064         
+  187 00000064         ;Slice P
+  188 00000064 485C            ldr              r0,=OUT_MUX_CFG15
+  189 00000066 6001            str              r1, [r0]
+  190 00000068         
+  191 00000068         ;Set up SGPIO_MUX_CFGs
+  192 00000068 485C            ldr              r0,=SGPIO_MUX_CFGA
+  193 0000006A F44F 6100       ldr              r1,=0x800
+  194 0000006E 6001            str              r1, [r0]
+  195 00000070         
+  196 00000070 485B            ldr              r0,=SGPIO_MUX_CFGC
+  197 00000072 6001            str              r1, [r0]
+  198 00000074         
+  199 00000074 485B            ldr              r0,=SGPIO_MUX_CFGG
+  200 00000076 6001            str              r1, [r0]
+  201 00000078         
+  202 00000078 485B            ldr              r0,=SGPIO_MUX_CFGI
+  203 0000007A 6001            str              r1, [r0]
+  204 0000007C         
+  205 0000007C 485B            ldr              r0,=SGPIO_MUX_CFGK
+  206 0000007E 6001            str              r1, [r0]
+  207 00000080         
+  208 00000080 485B            ldr              r0,=SGPIO_MUX_CFGL
+  209 00000082 6001            str              r1, [r0]
+  210 00000084         
+  211 00000084 485B            ldr              r0,=SGPIO_MUX_CFGN
+  212 00000086 6001            str              r1, [r0]
+  213 00000088         
+  214 00000088 485B            ldr              r0,=SGPIO_MUX_CFGP
+  215 0000008A 6001            str              r1, [r0]
+  216 0000008C         
+  217 0000008C         ;Set up SLICE_MUX_CFGs
+  218 0000008C         ;Shift 1 bit per clock
+  219 0000008C 485B            ldr              r0,=SLICE_MUX_CFG0
+  220 0000008E F04F 0100       ldr              r1,=0x0
+  221 00000092 6001            str              r1, [r0]
+  222 00000094         
+  223 00000094 485A            ldr              r0,=SLICE_MUX_CFG1
+  224 00000096 6001            str              r1, [r0]
+  225 00000098         
+  226 00000098 485A            ldr              r0,=SLICE_MUX_CFG4
+
+
+
+ARM Macro Assembler    Page 7 
+
+
+  227 0000009A 6001            str              r1, [r0]
+  228 0000009C         
+  229 0000009C 485A            ldr              r0,=SLICE_MUX_CFG5
+  230 0000009E 6001            str              r1, [r0]
+  231 000000A0         
+  232 000000A0 485A            ldr              r0,=SLICE_MUX_CFG7
+  233 000000A2 6001            str              r1, [r0]
+  234 000000A4         
+  235 000000A4 485A            ldr              r0,=SLICE_MUX_CFG10
+  236 000000A6 6001            str              r1, [r0]
+  237 000000A8         
+  238 000000A8 485A            ldr              r0,=SLICE_MUX_CFG11
+  239 000000AA 6001            str              r1, [r0]
+  240 000000AC         
+  241 000000AC 485A            ldr              r0,=SLICE_MUX_CFG15
+  242 000000AE 6001            str              r1, [r0]
+  243 000000B0         
+  244 000000B0         ;Set up REGs
+  245 000000B0 485A            ldr              r0,=REGA
+  246 000000B2 F04F 0100       ldr              r1,=CONSTANT0
+  247 000000B6 6001            str              r1, [r0]
+  248 000000B8         
+  249 000000B8 4859            ldr              r0,=REGC
+  250 000000BA F04F 31FF       ldr              r1,=CONSTANT1
+  251 000000BE 6001            str              r1, [r0]
+  252 000000C0         
+  253 000000C0 4858            ldr              r0,=REGG
+  254 000000C2 F04F 3155       ldr              r1,=CONSTANT2
+  255 000000C6 6001            str              r1, [r0]
+  256 000000C8         
+  257 000000C8 4857            ldr              r0,=REGI
+  258 000000CA F04F 31AA       ldr              r1,=CONSTANT3
+  259 000000CE 6001            str              r1, [r0]
+  260 000000D0         
+  261 000000D0 4856            ldr              r0,=REGK
+  262 000000D2 F04F 3150       ldr              r1,=CONSTANT4
+  263 000000D6 6001            str              r1, [r0]
+  264 000000D8         
+  265 000000D8 4855            ldr              r0,=REGL
+  266 000000DA F04F 3160       ldr              r1,=CONSTANT5
+  267 000000DE 6001            str              r1, [r0]
+  268 000000E0         
+  269 000000E0 4854            ldr              r0,=REGN
+  270 000000E2 F04F 3170       ldr              r1,=CONSTANT6
+  271 000000E6 6001            str              r1, [r0]
+  272 000000E8         
+  273 000000E8 4853            ldr              r0,=REGP
+  274 000000EA F04F 3180       ldr              r1,=CONSTANT7
+  275 000000EE 6001            str              r1, [r0]
+  276 000000F0         
+  277 000000F0         ;Set up REG_SSs
+  278 000000F0 4852            ldr              r0,=REGA_SS
+  279 000000F2 F04F 0100       ldr              r1,=CONSTANT0
+  280 000000F6 6001            str              r1, [r0]
+  281 000000F8         
+  282 000000F8 4851            ldr              r0,=REGC_SS
+  283 000000FA F04F 31FF       ldr              r1,=CONSTANT1
+  284 000000FE 6001            str              r1, [r0]
+  285 00000100         
+
+
+
+ARM Macro Assembler    Page 8 
+
+
+  286 00000100 4850            ldr              r0,=REGG_SS
+  287 00000102 F04F 3155       ldr              r1,=CONSTANT2
+  288 00000106 6001            str              r1, [r0]
+  289 00000108         
+  290 00000108 484F            ldr              r0,=REGI_SS
+  291 0000010A F04F 31AA       ldr              r1,=CONSTANT3
+  292 0000010E 6001            str              r1, [r0]
+  293 00000110         
+  294 00000110 484E            ldr              r0,=REGK_SS
+  295 00000112 F04F 3150       ldr              r1,=CONSTANT4
+  296 00000116 6001            str              r1, [r0]
+  297 00000118         
+  298 00000118 484D            ldr              r0,=REGL_SS
+  299 0000011A F04F 3160       ldr              r1,=CONSTANT5
+  300 0000011E 6001            str              r1, [r0]
+  301 00000120         
+  302 00000120 484C            ldr              r0,=REGN_SS
+  303 00000122 F04F 3170       ldr              r1,=CONSTANT6
+  304 00000126 6001            str              r1, [r0]
+  305 00000128         
+  306 00000128 484B            ldr              r0,=REGP_SS
+  307 0000012A F04F 3180       ldr              r1,=CONSTANT7
+  308 0000012E 6001            str              r1, [r0]
+  309 00000130         
+  310 00000130         ;Set up PRESETs
+  311 00000130 484A            ldr              r0,=PRESET0
+  312 00000132 F04F 01A1       ldr              r1,=0xA1
+  313 00000136 6001            str              r1, [r0]
+  314 00000138         
+  315 00000138 4849            ldr              r0,=PRESET1
+  316 0000013A 6001            str              r1, [r0]
+  317 0000013C         
+  318 0000013C 4849            ldr              r0,=PRESET4
+  319 0000013E 6001            str              r1, [r0]
+  320 00000140         
+  321 00000140 4849            ldr              r0,=PRESET5
+  322 00000142 6001            str              r1, [r0]
+  323 00000144         
+  324 00000144 4849            ldr              r0,=PRESET7
+  325 00000146 6001            str              r1, [r0]
+  326 00000148         
+  327 00000148 4849            ldr              r0,=PRESET10
+  328 0000014A 6001            str              r1, [r0]
+  329 0000014C         
+  330 0000014C 4849            ldr              r0,=PRESET11
+  331 0000014E 6001            str              r1, [r0]
+  332 00000150         
+  333 00000150 4849            ldr              r0,=PRESET15
+  334 00000152 6001            str              r1, [r0]
+  335 00000154         
+  336 00000154         ;Set up POSs
+  337 00000154 4849            ldr              r0,=POS0
+  338 00000156 F44F 51F8       ldr              r1,=0x1F00
+  339 0000015A 6001            str              r1, [r0]
+  340 0000015C         
+  341 0000015C 4848            ldr              r0,=POS1
+  342 0000015E 6001            str              r1, [r0]
+  343 00000160         
+  344 00000160 4848            ldr              r0,=POS4
+
+
+
+ARM Macro Assembler    Page 9 
+
+
+  345 00000162 6001            str              r1, [r0]
+  346 00000164         
+  347 00000164 4848            ldr              r0,=POS5
+  348 00000166 6001            str              r1, [r0]
+  349 00000168         
+  350 00000168 4848            ldr              r0,=POS7
+  351 0000016A 6001            str              r1, [r0]
+  352 0000016C         
+  353 0000016C 4848            ldr              r0,=POS10
+  354 0000016E 6001            str              r1, [r0]
+  355 00000170         
+  356 00000170 4848            ldr              r0,=POS11
+  357 00000172 6001            str              r1, [r0]
+  358 00000174         
+  359 00000174 4848            ldr              r0,=POS15
+  360 00000176 6001            str              r1, [r0]
+  361 00000178         
+  362 00000178 4806            ldr              r0,=CTRL_ENABLED
+  363 0000017A F64A 5145       ldr              r1,=0xAD45
+  364 0000017E 6001            str              r1, [r0]
+  365 00000180         
+  366 00000180         lp
+  367 00000180 E7FE            b                lp
+  368 00000182                 ENDP
+  369 00000182         
+  370 00000182         NMI_Handler
+                               PROC
+  371 00000182 E7FE            b                Reset_Handler
+  372 00000184                 ENDP
+  373 00000184         
+  374 00000184         HardFault_Handler
+                               PROC
+  375 00000184 E7FE            b                Reset_Handler
+  376 00000186                 ENDP
+  377 00000186         
+  378 00000186         MemManage_Handler
+                               PROC
+  379 00000186 E7FE            b                Reset_Handler
+  380 00000188                 ENDP
+  381 00000188         
+  382 00000188         BusFault_Handler
+                               PROC
+  383 00000188 E7FE            b                Reset_Handler
+  384 0000018A                 ENDP
+  385 0000018A         
+  386 0000018A         UsageFault_Handler
+                               PROC
+  387 0000018A E7FE            b                Reset_Handler
+  388 0000018C                 ENDP
+  389 0000018C         
+  390 0000018C         SVC_Handler
+                               PROC
+  391 0000018C E7FE            b                Reset_Handler
+  392 0000018E                 ENDP
+  393 0000018E         
+  394 0000018E         DebugMon_Handler
+                               PROC
+  395 0000018E E7FE            b                Reset_Handler
+  396 00000190                 ENDP
+
+
+
+ARM Macro Assembler    Page 10 
+
+
+  397 00000190         
+  398 00000190         PendSV_Handler
+                               PROC
+  399 00000190 E7FE            b                Reset_Handler
+  400 00000192                 ENDP
+  401 00000192         
+  402 00000192         SysTick_Handler
+                               PROC
+  403 00000192 E7FE            b                Reset_Handler
+  404 00000194                 ENDP
+  405 00000194                 END
+              4010121C 
+              40101218 
+              4008608C 
+              40086090 
+              4008630C 
+              40086318 
+              40086094 
+              40086784 
+              40086788 
+              4008639C 
+              40101000 
+              40101010 
+              40101028 
+              40101004 
+              40101014 
+              4010101C 
+              4010102C 
+              4010103C 
+              40101040 
+              40101048 
+              40101058 
+              40101060 
+              40101068 
+              4010106C 
+              40101074 
+              4010107C 
+              40101080 
+              40101084 
+              40101090 
+              40101094 
+              4010109C 
+              401010A8 
+              401010AC 
+              401010BC 
+              401010C0 
+              401010C8 
+              401010D8 
+              401010E0 
+              401010E8 
+              401010EC 
+              401010F4 
+              401010FC 
+              40101100 
+              40101108 
+              40101118 
+              40101120 
+              40101128 
+              4010112C 
+
+
+
+ARM Macro Assembler    Page 11 
+
+
+              40101134 
+              4010113C 
+              40101140 
+              40101148 
+              40101158 
+              40101160 
+              40101168 
+              4010116C 
+              40101174 
+              4010117C 
+              401011C0 
+              401011C8 
+              401011D8 
+              401011E0 
+              401011E8 
+              401011EC 
+              401011F4 
+              401011FC 
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=sgpio
+.d -osgpio.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\I
+nc\NXP\LPC43xx --list=sgpio.lst sgpio.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STACK 00000000
+
+Symbol: STACK
+   Definitions
+      At line 102 in file sgpio.s
+   Uses
+      None
+Comment: STACK unused
+Stack_Mem 00000000
+
+Symbol: Stack_Mem
+   Definitions
+      At line 103 in file sgpio.s
+   Uses
+      None
+Comment: Stack_Mem unused
+__initial_sp 00000400
+
+Symbol: __initial_sp
+   Definitions
+      At line 104 in file sgpio.s
+   Uses
+      None
+Comment: __initial_sp unused
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BusFault_Handler 00000188
+
+Symbol: BusFault_Handler
+   Definitions
+      At line 382 in file sgpio.s
+   Uses
+      At line 94 in file sgpio.s
+Comment: BusFault_Handler used once
+DebugMon_Handler 0000018E
+
+Symbol: DebugMon_Handler
+   Definitions
+      At line 394 in file sgpio.s
+   Uses
+      At line 98 in file sgpio.s
+Comment: DebugMon_Handler used once
+HardFault_Handler 00000184
+
+Symbol: HardFault_Handler
+   Definitions
+      At line 374 in file sgpio.s
+   Uses
+      At line 92 in file sgpio.s
+Comment: HardFault_Handler used once
+MemManage_Handler 00000186
+
+Symbol: MemManage_Handler
+   Definitions
+      At line 378 in file sgpio.s
+   Uses
+      At line 93 in file sgpio.s
+Comment: MemManage_Handler used once
+NMI_Handler 00000182
+
+Symbol: NMI_Handler
+   Definitions
+      At line 370 in file sgpio.s
+   Uses
+      At line 91 in file sgpio.s
+Comment: NMI_Handler used once
+PendSV_Handler 00000190
+
+Symbol: PendSV_Handler
+   Definitions
+      At line 398 in file sgpio.s
+   Uses
+      At line 99 in file sgpio.s
+Comment: PendSV_Handler used once
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 109 in file sgpio.s
+   Uses
+      At line 90 in file sgpio.s
+      At line 371 in file sgpio.s
+      At line 375 in file sgpio.s
+      At line 379 in file sgpio.s
+      At line 383 in file sgpio.s
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 387 in file sgpio.s
+      At line 391 in file sgpio.s
+      At line 395 in file sgpio.s
+      At line 399 in file sgpio.s
+      At line 403 in file sgpio.s
+
+SVC_Handler 0000018C
+
+Symbol: SVC_Handler
+   Definitions
+      At line 390 in file sgpio.s
+   Uses
+      At line 97 in file sgpio.s
+Comment: SVC_Handler used once
+SysTick_Handler 00000192
+
+Symbol: SysTick_Handler
+   Definitions
+      At line 402 in file sgpio.s
+   Uses
+      At line 100 in file sgpio.s
+Comment: SysTick_Handler used once
+UsageFault_Handler 0000018A
+
+Symbol: UsageFault_Handler
+   Definitions
+      At line 386 in file sgpio.s
+   Uses
+      At line 95 in file sgpio.s
+Comment: UsageFault_Handler used once
+beg 00000000
+
+Symbol: beg
+   Definitions
+      At line 106 in file sgpio.s
+   Uses
+      None
+Comment: beg unused
+delay 00000004
+
+Symbol: delay
+   Definitions
+      At line 112 in file sgpio.s
+   Uses
+      At line 114 in file sgpio.s
+Comment: delay used once
+lp 00000180
+
+Symbol: lp
+   Definitions
+      At line 366 in file sgpio.s
+   Uses
+      At line 367 in file sgpio.s
+Comment: lp used once
+13 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+CONSTANT0 00000000
+
+Symbol: CONSTANT0
+   Definitions
+      At line 80 in file sgpio.s
+   Uses
+      At line 246 in file sgpio.s
+      At line 279 in file sgpio.s
+
+CONSTANT1 FFFFFFFF
+
+Symbol: CONSTANT1
+   Definitions
+      At line 81 in file sgpio.s
+   Uses
+      At line 250 in file sgpio.s
+      At line 283 in file sgpio.s
+
+CONSTANT2 55555555
+
+Symbol: CONSTANT2
+   Definitions
+      At line 82 in file sgpio.s
+   Uses
+      At line 254 in file sgpio.s
+      At line 287 in file sgpio.s
+
+CONSTANT3 AAAAAAAA
+
+Symbol: CONSTANT3
+   Definitions
+      At line 83 in file sgpio.s
+   Uses
+      At line 258 in file sgpio.s
+      At line 291 in file sgpio.s
+
+CONSTANT4 50505050
+
+Symbol: CONSTANT4
+   Definitions
+      At line 84 in file sgpio.s
+   Uses
+      At line 262 in file sgpio.s
+      At line 295 in file sgpio.s
+
+CONSTANT5 60606060
+
+Symbol: CONSTANT5
+   Definitions
+      At line 85 in file sgpio.s
+   Uses
+      At line 266 in file sgpio.s
+      At line 299 in file sgpio.s
+
+CONSTANT6 70707070
+
+Symbol: CONSTANT6
+   Definitions
+      At line 86 in file sgpio.s
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Absolute symbols
+
+   Uses
+      At line 270 in file sgpio.s
+      At line 303 in file sgpio.s
+
+CONSTANT7 80808080
+
+Symbol: CONSTANT7
+   Definitions
+      At line 87 in file sgpio.s
+   Uses
+      At line 274 in file sgpio.s
+      At line 307 in file sgpio.s
+
+CTRL_ENABLED 4010121C
+
+Symbol: CTRL_ENABLED
+   Definitions
+      At line 77 in file sgpio.s
+   Uses
+      At line 117 in file sgpio.s
+      At line 362 in file sgpio.s
+
+DELAY_BEFORE_START 00010000
+
+Symbol: DELAY_BEFORE_START
+   Definitions
+      At line 1 in file sgpio.s
+   Uses
+      At line 111 in file sgpio.s
+Comment: DELAY_BEFORE_START used once
+GPIO_OENREG 40101218
+
+Symbol: GPIO_OENREG
+   Definitions
+      At line 78 in file sgpio.s
+   Uses
+      At line 122 in file sgpio.s
+Comment: GPIO_OENREG used once
+OUT_MUX_CFG0 40101000
+
+Symbol: OUT_MUX_CFG0
+   Definitions
+      At line 14 in file sgpio.s
+   Uses
+      At line 156 in file sgpio.s
+Comment: OUT_MUX_CFG0 used once
+OUT_MUX_CFG1 40101004
+
+Symbol: OUT_MUX_CFG1
+   Definitions
+      At line 15 in file sgpio.s
+   Uses
+      At line 170 in file sgpio.s
+Comment: OUT_MUX_CFG1 used once
+OUT_MUX_CFG10 40101028
+
+Symbol: OUT_MUX_CFG10
+   Definitions
+      At line 19 in file sgpio.s
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Absolute symbols
+
+   Uses
+      At line 166 in file sgpio.s
+Comment: OUT_MUX_CFG10 used once
+OUT_MUX_CFG11 4010102C
+
+Symbol: OUT_MUX_CFG11
+   Definitions
+      At line 20 in file sgpio.s
+   Uses
+      At line 184 in file sgpio.s
+Comment: OUT_MUX_CFG11 used once
+OUT_MUX_CFG15 4010103C
+
+Symbol: OUT_MUX_CFG15
+   Definitions
+      At line 21 in file sgpio.s
+   Uses
+      At line 188 in file sgpio.s
+Comment: OUT_MUX_CFG15 used once
+OUT_MUX_CFG4 40101010
+
+Symbol: OUT_MUX_CFG4
+   Definitions
+      At line 16 in file sgpio.s
+   Uses
+      At line 162 in file sgpio.s
+Comment: OUT_MUX_CFG4 used once
+OUT_MUX_CFG5 40101014
+
+Symbol: OUT_MUX_CFG5
+   Definitions
+      At line 17 in file sgpio.s
+   Uses
+      At line 175 in file sgpio.s
+Comment: OUT_MUX_CFG5 used once
+OUT_MUX_CFG7 4010101C
+
+Symbol: OUT_MUX_CFG7
+   Definitions
+      At line 18 in file sgpio.s
+   Uses
+      At line 179 in file sgpio.s
+Comment: OUT_MUX_CFG7 used once
+POS0 401011C0
+
+Symbol: POS0
+   Definitions
+      At line 68 in file sgpio.s
+   Uses
+      At line 337 in file sgpio.s
+Comment: POS0 used once
+POS1 401011C8
+
+Symbol: POS1
+   Definitions
+      At line 69 in file sgpio.s
+   Uses
+      At line 341 in file sgpio.s
+Comment: POS1 used once
+
+
+
+ARM Macro Assembler    Page 4 Alphabetic symbol ordering
+Absolute symbols
+
+POS10 401011EC
+
+Symbol: POS10
+   Definitions
+      At line 73 in file sgpio.s
+   Uses
+      At line 353 in file sgpio.s
+Comment: POS10 used once
+POS11 401011F4
+
+Symbol: POS11
+   Definitions
+      At line 74 in file sgpio.s
+   Uses
+      At line 356 in file sgpio.s
+Comment: POS11 used once
+POS15 401011FC
+
+Symbol: POS15
+   Definitions
+      At line 75 in file sgpio.s
+   Uses
+      At line 359 in file sgpio.s
+Comment: POS15 used once
+POS4 401011D8
+
+Symbol: POS4
+   Definitions
+      At line 70 in file sgpio.s
+   Uses
+      At line 344 in file sgpio.s
+Comment: POS4 used once
+POS5 401011E0
+
+Symbol: POS5
+   Definitions
+      At line 71 in file sgpio.s
+   Uses
+      At line 347 in file sgpio.s
+Comment: POS5 used once
+POS7 401011E8
+
+Symbol: POS7
+   Definitions
+      At line 72 in file sgpio.s
+   Uses
+      At line 350 in file sgpio.s
+Comment: POS7 used once
+PRESET0 40101140
+
+Symbol: PRESET0
+   Definitions
+      At line 59 in file sgpio.s
+   Uses
+      At line 311 in file sgpio.s
+Comment: PRESET0 used once
+PRESET1 40101148
+
+Symbol: PRESET1
+
+
+
+ARM Macro Assembler    Page 5 Alphabetic symbol ordering
+Absolute symbols
+
+   Definitions
+      At line 60 in file sgpio.s
+   Uses
+      At line 315 in file sgpio.s
+Comment: PRESET1 used once
+PRESET10 4010116C
+
+Symbol: PRESET10
+   Definitions
+      At line 64 in file sgpio.s
+   Uses
+      At line 327 in file sgpio.s
+Comment: PRESET10 used once
+PRESET11 40101174
+
+Symbol: PRESET11
+   Definitions
+      At line 65 in file sgpio.s
+   Uses
+      At line 330 in file sgpio.s
+Comment: PRESET11 used once
+PRESET15 4010117C
+
+Symbol: PRESET15
+   Definitions
+      At line 66 in file sgpio.s
+   Uses
+      At line 333 in file sgpio.s
+Comment: PRESET15 used once
+PRESET4 40101158
+
+Symbol: PRESET4
+   Definitions
+      At line 61 in file sgpio.s
+   Uses
+      At line 318 in file sgpio.s
+Comment: PRESET4 used once
+PRESET5 40101160
+
+Symbol: PRESET5
+   Definitions
+      At line 62 in file sgpio.s
+   Uses
+      At line 321 in file sgpio.s
+Comment: PRESET5 used once
+PRESET7 40101168
+
+Symbol: PRESET7
+   Definitions
+      At line 63 in file sgpio.s
+   Uses
+      At line 324 in file sgpio.s
+Comment: PRESET7 used once
+REGA 401010C0
+
+Symbol: REGA
+   Definitions
+      At line 41 in file sgpio.s
+   Uses
+
+
+
+ARM Macro Assembler    Page 6 Alphabetic symbol ordering
+Absolute symbols
+
+      At line 245 in file sgpio.s
+Comment: REGA used once
+REGA_SS 40101100
+
+Symbol: REGA_SS
+   Definitions
+      At line 50 in file sgpio.s
+   Uses
+      At line 278 in file sgpio.s
+Comment: REGA_SS used once
+REGC 401010C8
+
+Symbol: REGC
+   Definitions
+      At line 42 in file sgpio.s
+   Uses
+      At line 249 in file sgpio.s
+Comment: REGC used once
+REGC_SS 40101108
+
+Symbol: REGC_SS
+   Definitions
+      At line 51 in file sgpio.s
+   Uses
+      At line 282 in file sgpio.s
+Comment: REGC_SS used once
+REGG 401010D8
+
+Symbol: REGG
+   Definitions
+      At line 43 in file sgpio.s
+   Uses
+      At line 253 in file sgpio.s
+Comment: REGG used once
+REGG_SS 40101118
+
+Symbol: REGG_SS
+   Definitions
+      At line 52 in file sgpio.s
+   Uses
+      At line 286 in file sgpio.s
+Comment: REGG_SS used once
+REGI 401010E0
+
+Symbol: REGI
+   Definitions
+      At line 44 in file sgpio.s
+   Uses
+      At line 257 in file sgpio.s
+Comment: REGI used once
+REGI_SS 40101120
+
+Symbol: REGI_SS
+   Definitions
+      At line 53 in file sgpio.s
+   Uses
+      At line 290 in file sgpio.s
+Comment: REGI_SS used once
+REGK 401010E8
+
+
+
+ARM Macro Assembler    Page 7 Alphabetic symbol ordering
+Absolute symbols
+
+
+Symbol: REGK
+   Definitions
+      At line 45 in file sgpio.s
+   Uses
+      At line 261 in file sgpio.s
+Comment: REGK used once
+REGK_SS 40101128
+
+Symbol: REGK_SS
+   Definitions
+      At line 54 in file sgpio.s
+   Uses
+      At line 294 in file sgpio.s
+Comment: REGK_SS used once
+REGL 401010EC
+
+Symbol: REGL
+   Definitions
+      At line 46 in file sgpio.s
+   Uses
+      At line 265 in file sgpio.s
+Comment: REGL used once
+REGL_SS 4010112C
+
+Symbol: REGL_SS
+   Definitions
+      At line 55 in file sgpio.s
+   Uses
+      At line 298 in file sgpio.s
+Comment: REGL_SS used once
+REGN 401010F4
+
+Symbol: REGN
+   Definitions
+      At line 47 in file sgpio.s
+   Uses
+      At line 269 in file sgpio.s
+Comment: REGN used once
+REGN_SS 40101134
+
+Symbol: REGN_SS
+   Definitions
+      At line 56 in file sgpio.s
+   Uses
+      At line 302 in file sgpio.s
+Comment: REGN_SS used once
+REGP 401010FC
+
+Symbol: REGP
+   Definitions
+      At line 48 in file sgpio.s
+   Uses
+      At line 273 in file sgpio.s
+Comment: REGP used once
+REGP_SS 4010113C
+
+Symbol: REGP_SS
+   Definitions
+
+
+
+ARM Macro Assembler    Page 8 Alphabetic symbol ordering
+Absolute symbols
+
+      At line 57 in file sgpio.s
+   Uses
+      At line 306 in file sgpio.s
+Comment: REGP_SS used once
+SCU_P1_3 4008608C
+
+Symbol: SCU_P1_3
+   Definitions
+      At line 5 in file sgpio.s
+   Uses
+      At line 127 in file sgpio.s
+Comment: SCU_P1_3 used once
+SCU_P1_4 40086090
+
+Symbol: SCU_P1_4
+   Definitions
+      At line 6 in file sgpio.s
+   Uses
+      At line 131 in file sgpio.s
+Comment: SCU_P1_4 used once
+SCU_P1_5 40086094
+
+Symbol: SCU_P1_5
+   Definitions
+      At line 7 in file sgpio.s
+   Uses
+      At line 140 in file sgpio.s
+Comment: SCU_P1_5 used once
+SCU_P6_3 4008630C
+
+Symbol: SCU_P6_3
+   Definitions
+      At line 8 in file sgpio.s
+   Uses
+      At line 134 in file sgpio.s
+Comment: SCU_P6_3 used once
+SCU_P6_6 40086318
+
+Symbol: SCU_P6_6
+   Definitions
+      At line 9 in file sgpio.s
+   Uses
+      At line 137 in file sgpio.s
+Comment: SCU_P6_6 used once
+SCU_P7_7 4008639C
+
+Symbol: SCU_P7_7
+   Definitions
+      At line 10 in file sgpio.s
+   Uses
+      At line 150 in file sgpio.s
+Comment: SCU_P7_7 used once
+SCU_PF_1 40086784
+
+Symbol: SCU_PF_1
+   Definitions
+      At line 11 in file sgpio.s
+   Uses
+      At line 144 in file sgpio.s
+
+
+
+ARM Macro Assembler    Page 9 Alphabetic symbol ordering
+Absolute symbols
+
+Comment: SCU_PF_1 used once
+SCU_PF_2 40086788
+
+Symbol: SCU_PF_2
+   Definitions
+      At line 12 in file sgpio.s
+   Uses
+      At line 147 in file sgpio.s
+Comment: SCU_PF_2 used once
+SGPIO_MUX_CFGA 40101040
+
+Symbol: SGPIO_MUX_CFGA
+   Definitions
+      At line 32 in file sgpio.s
+   Uses
+      At line 192 in file sgpio.s
+Comment: SGPIO_MUX_CFGA used once
+SGPIO_MUX_CFGC 40101048
+
+Symbol: SGPIO_MUX_CFGC
+   Definitions
+      At line 33 in file sgpio.s
+   Uses
+      At line 196 in file sgpio.s
+Comment: SGPIO_MUX_CFGC used once
+SGPIO_MUX_CFGG 40101058
+
+Symbol: SGPIO_MUX_CFGG
+   Definitions
+      At line 34 in file sgpio.s
+   Uses
+      At line 199 in file sgpio.s
+Comment: SGPIO_MUX_CFGG used once
+SGPIO_MUX_CFGI 40101060
+
+Symbol: SGPIO_MUX_CFGI
+   Definitions
+      At line 35 in file sgpio.s
+   Uses
+      At line 202 in file sgpio.s
+Comment: SGPIO_MUX_CFGI used once
+SGPIO_MUX_CFGK 40101068
+
+Symbol: SGPIO_MUX_CFGK
+   Definitions
+      At line 36 in file sgpio.s
+   Uses
+      At line 205 in file sgpio.s
+Comment: SGPIO_MUX_CFGK used once
+SGPIO_MUX_CFGL 4010106C
+
+Symbol: SGPIO_MUX_CFGL
+   Definitions
+      At line 37 in file sgpio.s
+   Uses
+      At line 208 in file sgpio.s
+Comment: SGPIO_MUX_CFGL used once
+SGPIO_MUX_CFGN 40101074
+
+
+
+
+ARM Macro Assembler    Page 10 Alphabetic symbol ordering
+Absolute symbols
+
+Symbol: SGPIO_MUX_CFGN
+   Definitions
+      At line 38 in file sgpio.s
+   Uses
+      At line 211 in file sgpio.s
+Comment: SGPIO_MUX_CFGN used once
+SGPIO_MUX_CFGP 4010107C
+
+Symbol: SGPIO_MUX_CFGP
+   Definitions
+      At line 39 in file sgpio.s
+   Uses
+      At line 214 in file sgpio.s
+Comment: SGPIO_MUX_CFGP used once
+SLICE_MUX_CFG0 40101080
+
+Symbol: SLICE_MUX_CFG0
+   Definitions
+      At line 23 in file sgpio.s
+   Uses
+      At line 219 in file sgpio.s
+Comment: SLICE_MUX_CFG0 used once
+SLICE_MUX_CFG1 40101084
+
+Symbol: SLICE_MUX_CFG1
+   Definitions
+      At line 24 in file sgpio.s
+   Uses
+      At line 223 in file sgpio.s
+Comment: SLICE_MUX_CFG1 used once
+SLICE_MUX_CFG10 401010A8
+
+Symbol: SLICE_MUX_CFG10
+   Definitions
+      At line 28 in file sgpio.s
+   Uses
+      At line 235 in file sgpio.s
+Comment: SLICE_MUX_CFG10 used once
+SLICE_MUX_CFG11 401010AC
+
+Symbol: SLICE_MUX_CFG11
+   Definitions
+      At line 29 in file sgpio.s
+   Uses
+      At line 238 in file sgpio.s
+Comment: SLICE_MUX_CFG11 used once
+SLICE_MUX_CFG15 401010BC
+
+Symbol: SLICE_MUX_CFG15
+   Definitions
+      At line 30 in file sgpio.s
+   Uses
+      At line 241 in file sgpio.s
+Comment: SLICE_MUX_CFG15 used once
+SLICE_MUX_CFG4 40101090
+
+Symbol: SLICE_MUX_CFG4
+   Definitions
+      At line 25 in file sgpio.s
+
+
+
+ARM Macro Assembler    Page 11 Alphabetic symbol ordering
+Absolute symbols
+
+   Uses
+      At line 226 in file sgpio.s
+Comment: SLICE_MUX_CFG4 used once
+SLICE_MUX_CFG5 40101094
+
+Symbol: SLICE_MUX_CFG5
+   Definitions
+      At line 26 in file sgpio.s
+   Uses
+      At line 229 in file sgpio.s
+Comment: SLICE_MUX_CFG5 used once
+SLICE_MUX_CFG7 4010109C
+
+Symbol: SLICE_MUX_CFG7
+   Definitions
+      At line 27 in file sgpio.s
+   Uses
+      At line 232 in file sgpio.s
+Comment: SLICE_MUX_CFG7 used once
+STACK_SIZE 00000400
+
+Symbol: STACK_SIZE
+   Definitions
+      At line 3 in file sgpio.s
+   Uses
+      At line 89 in file sgpio.s
+      At line 103 in file sgpio.s
+
+Sign_Value 5A5A5A5A
+
+Symbol: Sign_Value
+   Definitions
+      At line 2 in file sgpio.s
+   Uses
+      At line 96 in file sgpio.s
+Comment: Sign_Value used once
+77 symbols
+426 symbols in table

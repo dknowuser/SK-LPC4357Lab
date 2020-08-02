@@ -1,0 +1,21 @@
+*** Creating Trace Output File 'M4-M0.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"m4.o"'
+### List of Objects: adding '"table.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M4.fp "m4.o" "table.o" 
+--ropi --rwpi --strict --scatter "M4-M0.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\M4-M0.map" -o M4-M0.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'M4-M0.axf'
+### ADS-LD Command File: 'M4-M0.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'M4-M0.lnp', Handle=0x00000C18
+### Writing '.lnp' file
+### ADS-LD Command file 'M4-M0.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

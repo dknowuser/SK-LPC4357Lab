@@ -1,0 +1,1 @@
+table.o: table.s

@@ -1,0 +1,1 @@
+sgpio.o: sgpio.s

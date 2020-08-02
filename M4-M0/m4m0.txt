@@ -1,0 +1,29 @@
+lp	
+;Main loop
+	ldr r0,=GPIOSET;
+	ldr r1, [r0];
+	subs r1, 0x800;
+	beq led_off;
+;Turn the LED on
+	ldr r1,=0x800;
+	str r1, [r0];
+	
+	b delay;
+;Turn the LED off
+led_off
+	ldr r0,=GPIOCLR;
+	ldr r1,=0x800;
+	str r1, [r0];
+
+delay
+;Make delay
+	mov r3, #Delay;
+
+continue2
+	mov r0, #Delay;
+continue1
+	subs r0, r0, 0x1;
+	bne continue1;
+	
+	subs r3, r3, 0x1;
+	bne continue2;

@@ -1,0 +1,145 @@
+ARM Linker, 5.03 [Build 69] [MDK-ARM Professional]
+
+==============================================================================
+
+Section Cross References
+
+    m4.o(STACK) refers (Special) to m0.o(M0) for Reset_Handler_M0
+    m4.o(M4) refers (Special) to m0.o(M0) for Reset_Handler_M0
+    table.o(RESET) refers to m4.o(STACK) for __initial_sp
+    table.o(RESET) refers to m4.o(M4) for Reset_Handler
+    tablem0.o(M0) refers to m0.o(STACK) for __initial_sp_M0
+    tablem0.o(M0) refers to m0.o(M0) for Reset_Handler_M0
+
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    M0.s                                     0x00000000   Number         0  m0.o ABSOLUTE
+    M4.s                                     0x00000000   Number         0  m4.o ABSOLUTE
+    table.s                                  0x00000000   Number         0  table.o ABSOLUTE
+    tableM0.s                                0x00000000   Number         0  tablem0.o ABSOLUTE
+    STACK                                    0x10000000   Section     1024  m4.o(STACK)
+    STACK                                    0x10000400   Section     1024  m0.o(STACK)
+    RESET                                    0x1a000000   Section       72  table.o(RESET)
+    M4                                       0x1a000048   Section      168  m4.o(M4)
+    $v0                                      0x1a000048   Number         0  m4.o(M4)
+    M0                                       0x1b000000   Section       72  tablem0.o(M0)
+    M0                                       0x1b000048   Section       48  m0.o(M0)
+    $v0                                      0x1b000048   Number         0  m0.o(M0)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv4$E$P$D$K$B$S$7EM$VFPi3$EXTD16$VFPS$VFMA$PE$A:L22UL41UL21$X:L11$S22US41US21$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$STANDARDLIB$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __initial_sp                             0x10000400   Data           0  m4.o(STACK)
+    __initial_sp_M0                          0x10000800   Data           0  m0.o(STACK)
+    Reset_Handler                            0x1a000049   Thumb Code   102  m4.o(M4)
+    NMI_Handler                              0x1a0000af   Thumb Code     2  m4.o(M4)
+    HardFault_Handler                        0x1a0000b1   Thumb Code     2  m4.o(M4)
+    MemManage_Handler                        0x1a0000b3   Thumb Code     2  m4.o(M4)
+    BusFault_Handler                         0x1a0000b5   Thumb Code     2  m4.o(M4)
+    UsageFault_Handler                       0x1a0000b7   Thumb Code     2  m4.o(M4)
+    SVC_Handler                              0x1a0000b9   Thumb Code     2  m4.o(M4)
+    DebugMon_Handler                         0x1a0000bb   Thumb Code     2  m4.o(M4)
+    PendSV_Handler                           0x1a0000bd   Thumb Code     2  m4.o(M4)
+    SysTick_Handler                          0x1a0000bf   Thumb Code     2  m4.o(M4)
+    DAC_IRQHandler                           0x1a0000c1   Thumb Code     2  m4.o(M4)
+    IPC_Slave2Master_IRQHandler              0x1a0000c3   Thumb Code     2  m4.o(M4)
+    Reset_Handler_M0                         0x1b000049   Thumb Code    12  m0.o(M0)
+    NMI_Handler_M0                           0x1b000055   Thumb Code     2  m0.o(M0)
+    HardFault_Handler_M0                     0x1b000057   Thumb Code     2  m0.o(M0)
+    MemManage_Handler_M0                     0x1b000059   Thumb Code     2  m0.o(M0)
+    BusFault_Handler_M0                      0x1b00005b   Thumb Code     2  m0.o(M0)
+    UsageFault_Handler_M0                    0x1b00005d   Thumb Code     2  m0.o(M0)
+    SVC_Handler_M0                           0x1b00005f   Thumb Code     2  m0.o(M0)
+    DebugMon_Handler_M0                      0x1b000061   Thumb Code     2  m0.o(M0)
+    PendSV_Handler_M0                        0x1b000063   Thumb Code     2  m0.o(M0)
+    SysTick_Handler_M0                       0x1b000065   Thumb Code     2  m0.o(M0)
+    DAC_IRQHandler_M0                        0x1b000067   Thumb Code     2  m0.o(M0)
+    IPC_Master2Slave_IRQHandler_M0           0x1b000069   Thumb Code     2  m0.o(M0)
+    Sign_Value                               0x5a5a5a5a   Number         0  m4.o ABSOLUTE
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image entry point : Not specified.
+
+  Load Region LR_IROM1 (Base: 0x1a000000, Size: 0x000000f0, Max: 0x00080000, ABSOLUTE)
+
+    Execution Region RW_IRAM1 (Base: 0x10000000, Size: 0x00000800, Max: 0x00008000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x10000000   0x00000400   Zero   RW            1    STACK               m4.o
+    0x10000400   0x00000400   Zero   RW           14    STACK               m0.o
+
+
+    Execution Region ER_IROM1 (Base: 0x1a000000, Size: 0x000000f0, Max: 0x00080000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x1a000000   0x00000048   Code   RO            8    RESET               table.o
+    0x1a000048   0x000000a8   Code   RO            2  * M4                  m4.o
+
+
+
+  Load Region LR_IROM2 (Base: 0x1b000000, Size: 0x00000078, Max: 0x00080000, ABSOLUTE)
+
+    Execution Region ER_IROM2 (Base: 0x1b000000, Size: 0x00000078, Max: 0x00080000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x1b000000   0x00000048   Code   RO           11  * M0                  tablem0.o
+    0x1b000048   0x00000030   Code   RO           15    M0                  m0.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        48         14          0          0       1024        792   m0.o
+       168         44          0          0       1024        820   m4.o
+        72         72          0          0          0        116   table.o
+        72         72          0          0          0        120   tablem0.o
+
+    ----------------------------------------------------------------------
+       360        202          0          0       2048       1848   Object Totals
+         0          0          0          0          0          0   (incl. Generated)
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+         0          0          0          0          0          0   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+       360        202          0          0       2048       1748   Grand Totals
+       360        202          0          0       2048       1748   ELF Image Totals
+       360        202          0          0          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                  360 (   0.35kB)
+    Total RW  Size (RW Data + ZI Data)              2048 (   2.00kB)
+    Total ROM Size (Code + RO Data + RW Data)        360 (   0.35kB)
+
+==============================================================================
+

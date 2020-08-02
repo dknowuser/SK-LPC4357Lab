@@ -1,0 +1,21 @@
+*** Creating Trace Output File 'Freq.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"freq.o"'
+### List of Objects: adding '"table.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M4.fp "freq.o" "table.o" 
+--strict --scatter "Freq.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\Freq.map" -o Freq.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'Freq.axf'
+### ADS-LD Command File: 'Freq.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'Freq.lnp', Handle=0x00000B84
+### Writing '.lnp' file
+### ADS-LD Command file 'Freq.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

@@ -1,0 +1,5 @@
+--cpu Cortex-M4.fp -g --apcs=interwork 
+-I C:\Keil\ARM\RV31\INC 
+-I C:\Keil\ARM\CMSIS\Include 
+-I C:\Keil\ARM\Inc\NXP\LPC43xx 
+--list "blinkm0.lst" --xref -o "blinkm0.o" --depend "blinkm0.d" "blinkm0.s"

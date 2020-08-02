@@ -1,0 +1,21 @@
+*** Creating Trace Output File 'sgpio.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"sgpio.o"'
+### List of Objects: adding '"table.o"'
+### ADS-LD Command completed:
+--cpu Cortex-M4.fp "sgpio.o" "table.o" 
+--strict --scatter "sgpio.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\sgpio.map" -o sgpio.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: 'sgpio.axf'
+### ADS-LD Command File: 'sgpio.lnp'
+### Checking for dirty Components...
+### Creating CmdFile 'sgpio.lnp', Handle=0x000009C8
+### Writing '.lnp' file
+### ADS-LD Command file 'sgpio.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

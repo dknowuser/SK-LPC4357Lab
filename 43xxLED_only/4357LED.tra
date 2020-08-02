@@ -1,0 +1,24 @@
+*** Creating Trace Output File '4357LED.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"startup_lpc43xx.o"'
+### List of Objects: adding '"hid_main.o"'
+### List of Objects: adding '"sysinit.o"'
+### List of Objects: adding '".\Dependence\lib\lib_lpc_board_keil_mcb_4357.lib"'
+### List of Objects: adding '".\Dependence\lib\lib_lpc_chip_43xx.lib"'
+### ADS-LD Command completed:
+--cpu Cortex-M4 "startup_lpc43xx.o" "hid_main.o" "sysinit.o" E:\Projects\43xxLED_only\Dependence\lib\lib_lpc_board_keil_mcb_4357.lib E:\Projects\43xxLED_only\Dependence\lib\lib_lpc_chip_43xx.lib 
+--strict --scatter "4357LED.sct" 
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\4357LED.map" -o 4357LED.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '4357LED.axf'
+### ADS-LD Command File: '4357LED.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '4357LED.lnp', Handle=0x000006A0
+### Writing '.lnp' file
+### ADS-LD Command file '4357LED.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

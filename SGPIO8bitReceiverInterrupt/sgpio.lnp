@@ -1,0 +1,7 @@
+--cpu=Cortex-M4.fp
+".\sgpio.o"
+".\table.o"
+--strict --scatter ".\sgpio.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\sgpio.map" -o .\sgpio.axf

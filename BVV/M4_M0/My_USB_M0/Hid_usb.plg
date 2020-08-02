@@ -1,0 +1,26 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\Projects\BVV\M4_M0\My_USB_M0\Hid_usb.uvproj
+Project File Date:  07/28/2015
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling startup_LPC43xx.s...
+compiling hid_desc.c...
+compiling hid_generic.c...
+compiling hid_main.c...
+compiling sysinit.c...
+linking...
+Program Size: Code=3096 RO-data=1124 RW-data=132 ZI-data=1892  
+User command #1: C:\Keil\\ARM\BIN\ELFDWT.EXE .\Hid_usb.axf BASEADDRESS(0x1A000000)
+ELFDWT - Signature Creator V1.1
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2012
+*** Fatal-Error while processing elf/dwarf file
+***  Error: Range not found: 0x1A000000 - 0x1A00001C
+*** ElfDwT terminated.
+"Hid_usb.axf" - 0 Error(s), 0 Warning(s).
+Clean started: Project: 'Hid_usb'
+   deleting intermediate output files for target 'Target 1'

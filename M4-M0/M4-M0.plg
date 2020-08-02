@@ -1,0 +1,388 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+E:\Projects\M4-M0\M4-M0.uvproj
+Project File Date:  05/07/2017
+
+<h2>Output:</h2>
+Rebuild target 'Target 1'
+assembling M4.s...
+M4.s(58): warning: A1865W: '#' not seen before constant expression
+M4.s(62): warning: A1865W: '#' not seen before constant expression
+M4.s(81): warning: A1865W: '#' not seen before constant expression
+M4.s(85): warning: A1865W: '#' not seen before constant expression
+M4.s(90): warning: A1865W: '#' not seen before constant expression
+M4.s(94): warning: A1865W: '#' not seen before constant expression
+assembling table.s...
+assembling tableM0.s...
+assembling M0.s...
+M0.s(133): warning: A1581W: Added 2 bytes of padding at address 0x22
+linking...
+M4-M0.axf: Warning: L6914W: option ropi ignored when using --scatter.
+M4-M0.axf: Warning: L6914W: option rwpi ignored when using --scatter.
+M4-M0.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
+M4-M0.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+Program Size: Code=360 RO-data=0 RW-data=0 ZI-data=2048  
+FromELF: creating hex file...
+User command #1: C:\Keil\\ARM\BIN\ELFDWT.EXE .\M4-M0.axf BASEADDRESS(0x1A000000)
+ELFDWT - Signature Creator V1.1
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2012
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FFF838
+*** Processing completed, no Errors.
+"M4-M0.axf" - 0 Error(s), 11 Warning(s).
+Load "E:\\Projects\\M4-M0\\M4-M0.axf" 
+Set JLink Project File to "E:\Projects\M4-M0\JLinkSettings.ini"
+* JLink Info: Device "LPC4357_M4" selected (1024 KB flash, 40 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 8, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: LPC4357
+VTarget = 3.319V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 9600 kHz
+ 
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Rebuild target 'Target 1'
+assembling M4.s...
+M4.s(58): warning: A1865W: '#' not seen before constant expression
+M4.s(62): warning: A1865W: '#' not seen before constant expression
+M4.s(81): warning: A1865W: '#' not seen before constant expression
+M4.s(85): warning: A1865W: '#' not seen before constant expression
+M4.s(90): warning: A1865W: '#' not seen before constant expression
+M4.s(94): warning: A1865W: '#' not seen before constant expression
+assembling table.s...
+assembling tableM0.s...
+assembling M0.s...
+M0.s(133): warning: A1581W: Added 2 bytes of padding at address 0x22
+linking...
+M4-M0.axf: Warning: L6914W: option ropi ignored when using --scatter.
+M4-M0.axf: Warning: L6914W: option rwpi ignored when using --scatter.
+M4-M0.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
+M4-M0.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+M4-M0.sct(10): warning: L6314W: No section matches pattern table.o(RO).
+Program Size: Code=360 RO-data=0 RW-data=0 ZI-data=2048  
+FromELF: creating hex file...
+User command #1: C:\Keil\\ARM\BIN\ELFDWT.EXE .\M4-M0.axf BASEADDRESS(0x1A000000)
+ELFDWT - Signature Creator V1.1
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2012
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FFF838
+*** Processing completed, no Errors.
+"M4-M0.axf" - 0 Error(s), 12 Warning(s).
+Load "E:\\Projects\\M4-M0\\M4-M0.axf" 
+Set JLink Project File to "E:\Projects\M4-M0\JLinkSettings.ini"
+* JLink Info: Device "LPC4357_M4" selected (1024 KB flash, 40 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 8, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: LPC4357
+VTarget = 3.325V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 9600 kHz
+ 
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Rebuild target 'Target 1'
+assembling M4.s...
+M4.s(58): warning: A1865W: '#' not seen before constant expression
+M4.s(62): warning: A1865W: '#' not seen before constant expression
+M4.s(81): warning: A1865W: '#' not seen before constant expression
+M4.s(85): warning: A1865W: '#' not seen before constant expression
+M4.s(90): warning: A1865W: '#' not seen before constant expression
+M4.s(94): warning: A1865W: '#' not seen before constant expression
+assembling table.s...
+assembling tableM0.s...
+assembling M0.s...
+M0.s(133): warning: A1581W: Added 2 bytes of padding at address 0x22
+linking...
+M4-M0.axf: Warning: L6914W: option ropi ignored when using --scatter.
+M4-M0.axf: Warning: L6914W: option rwpi ignored when using --scatter.
+M4-M0.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
+M4-M0.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+M4-M0.sct(10): warning: L6314W: No section matches pattern table.o(RO).
+Program Size: Code=360 RO-data=0 RW-data=0 ZI-data=2048  
+FromELF: creating hex file...
+User command #1: C:\Keil\\ARM\BIN\ELFDWT.EXE .\M4-M0.axf BASEADDRESS(0x1A000000)
+ELFDWT - Signature Creator V1.1
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2012
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FFF838
+*** Processing completed, no Errors.
+"M4-M0.axf" - 0 Error(s), 12 Warning(s).
+Load "E:\\Projects\\M4-M0\\M4-M0.axf" 
+Set JLink Project File to "E:\Projects\M4-M0\JLinkSettings.ini"
+* JLink Info: Device "LPC4357_M4" selected (1024 KB flash, 40 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 8, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: LPC4357
+VTarget = 3.319V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 9600 kHz
+ 
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Rebuild target 'Target 1'
+assembling M4.s...
+M4.s(58): warning: A1865W: '#' not seen before constant expression
+M4.s(62): warning: A1865W: '#' not seen before constant expression
+M4.s(81): warning: A1865W: '#' not seen before constant expression
+M4.s(85): warning: A1865W: '#' not seen before constant expression
+M4.s(90): warning: A1865W: '#' not seen before constant expression
+M4.s(94): warning: A1865W: '#' not seen before constant expression
+assembling table.s...
+assembling tableM0.s...
+assembling M0.s...
+M0.s(133): warning: A1581W: Added 2 bytes of padding at address 0x22
+linking...
+M4-M0.axf: Warning: L6914W: option ropi ignored when using --scatter.
+M4-M0.axf: Warning: L6914W: option rwpi ignored when using --scatter.
+M4-M0.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
+M4-M0.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+M4-M0.sct(10): warning: L6314W: No section matches pattern table.o(RO).
+Program Size: Code=360 RO-data=0 RW-data=0 ZI-data=2048  
+FromELF: creating hex file...
+User command #1: C:\Keil\\ARM\BIN\ELFDWT.EXE .\M4-M0.axf BASEADDRESS(0x1A000000)
+ELFDWT - Signature Creator V1.1
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2012
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FFF838
+*** Processing completed, no Errors.
+"M4-M0.axf" - 0 Error(s), 12 Warning(s).
+Load "E:\\Projects\\M4-M0\\M4-M0.axf" 
+Set JLink Project File to "E:\Projects\M4-M0\JLinkSettings.ini"
+* JLink Info: Device "LPC4357_M4" selected (1024 KB flash, 40 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 8, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: LPC4357
+VTarget = 3.325V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 9600 kHz
+ 
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Rebuild target 'Target 1'
+assembling M4.s...
+M4.s(58): warning: A1865W: '#' not seen before constant expression
+M4.s(62): warning: A1865W: '#' not seen before constant expression
+M4.s(81): warning: A1865W: '#' not seen before constant expression
+M4.s(85): warning: A1865W: '#' not seen before constant expression
+M4.s(90): warning: A1865W: '#' not seen before constant expression
+M4.s(94): warning: A1865W: '#' not seen before constant expression
+assembling table.s...
+assembling tableM0.s...
+assembling M0.s...
+M0.s(133): warning: A1581W: Added 2 bytes of padding at address 0x22
+linking...
+M4-M0.axf: Warning: L6914W: option ropi ignored when using --scatter.
+M4-M0.axf: Warning: L6914W: option rwpi ignored when using --scatter.
+M4-M0.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
+M4-M0.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+M4-M0.sct(10): warning: L6314W: No section matches pattern table.o(RO).
+Program Size: Code=360 RO-data=0 RW-data=0 ZI-data=2048  
+FromELF: creating hex file...
+User command #1: C:\Keil\\ARM\BIN\ELFDWT.EXE .\M4-M0.axf BASEADDRESS(0x1A000000)
+ELFDWT - Signature Creator V1.1
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2012
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FFF838
+*** Processing completed, no Errors.
+"M4-M0.axf" - 0 Error(s), 12 Warning(s).
+Load "E:\\Projects\\M4-M0\\M4-M0.axf" 
+Set JLink Project File to "E:\Projects\M4-M0\JLinkSettings.ini"
+* JLink Info: Device "LPC4357_M4" selected (1024 KB flash, 40 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 8, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: LPC4357
+VTarget = 3.325V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 9600 kHz
+ 
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+Rebuild target 'Target 1'
+assembling M4.s...
+M4.s(58): warning: A1865W: '#' not seen before constant expression
+M4.s(62): warning: A1865W: '#' not seen before constant expression
+M4.s(81): warning: A1865W: '#' not seen before constant expression
+M4.s(85): warning: A1865W: '#' not seen before constant expression
+M4.s(90): warning: A1865W: '#' not seen before constant expression
+M4.s(94): warning: A1865W: '#' not seen before constant expression
+assembling table.s...
+assembling tableM0.s...
+assembling M0.s...
+M0.s(133): warning: A1581W: Added 2 bytes of padding at address 0x22
+linking...
+M4-M0.axf: Warning: L6914W: option ropi ignored when using --scatter.
+M4-M0.axf: Warning: L6914W: option rwpi ignored when using --scatter.
+M4-M0.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
+M4-M0.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+M4-M0.sct(10): warning: L6314W: No section matches pattern table.o(RO).
+Program Size: Code=360 RO-data=0 RW-data=0 ZI-data=2048  
+FromELF: creating hex file...
+User command #1: C:\Keil\\ARM\BIN\ELFDWT.EXE .\M4-M0.axf BASEADDRESS(0x1A000000)
+ELFDWT - Signature Creator V1.1
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2012
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FFF838
+*** Processing completed, no Errors.
+"M4-M0.axf" - 0 Error(s), 12 Warning(s).
+Rebuild target 'Target 1'
+assembling M4.s...
+M4.s(58): warning: A1865W: '#' not seen before constant expression
+M4.s(62): warning: A1865W: '#' not seen before constant expression
+M4.s(81): warning: A1865W: '#' not seen before constant expression
+M4.s(85): warning: A1865W: '#' not seen before constant expression
+M4.s(90): warning: A1865W: '#' not seen before constant expression
+M4.s(94): warning: A1865W: '#' not seen before constant expression
+assembling table.s...
+assembling tableM0.s...
+assembling M0.s...
+M0.s(133): warning: A1581W: Added 2 bytes of padding at address 0x22
+linking...
+M4-M0.axf: Warning: L6914W: option ropi ignored when using --scatter.
+M4-M0.axf: Warning: L6914W: option rwpi ignored when using --scatter.
+M4-M0.axf: Warning: L6305W: Image does not have an entry point. (Not specified or not set due to multiple choices.)
+M4-M0.sct(8): warning: L6314W: No section matches pattern *(InRoot$$Sections).
+M4-M0.sct(10): warning: L6314W: No section matches pattern table.o(RO).
+Program Size: Code=360 RO-data=0 RW-data=0 ZI-data=2048  
+FromELF: creating hex file...
+User command #1: C:\Keil\\ARM\BIN\ELFDWT.EXE .\M4-M0.axf BASEADDRESS(0x1A000000)
+ELFDWT - Signature Creator V1.1
+COPYRIGHT Keil - An ARM Company, Copyright (C) 2012
+*** Updated Signature over Range[32] (0x1A000000 - 0x1A000018): @0x1A00001C = 0x53FFF838
+*** Processing completed, no Errors.
+"M4-M0.axf" - 0 Error(s), 12 Warning(s).
+Load "E:\\Projects\\M4-M0\\M4-M0.axf" 
+Set JLink Project File to "E:\Projects\M4-M0\JLinkSettings.ini"
+* JLink Info: Device "LPC4357_M4" selected (1024 KB flash, 40 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.68a, compiled Apr 12 2013 13:26:50
+Firmware: J-Link ARM V8 compiled Nov 28 2014 13:44:46
+Hardware: V8.00
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: TotalIRLen = 8, IRPrint = 0x0011
+* JLink Info: Found Cortex-M4 r0p1, Little endian.
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: LPC4357
+VTarget = 3.319V
+State of Pins: 
+TCK: 1, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 9600 kHz
+ 
+Full Chip Erase Done.
+Programming Done.
+Verify OK.
+Application running ...

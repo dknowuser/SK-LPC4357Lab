@@ -1,0 +1,420 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000 00000400 
+                       STACK_SIZE
+                               EQU              0x400
+    2 00000000 5A5A5A5A 
+                       Sign_Value
+                               EQU              0x5A5A5A5A
+    3 00000000         
+    4 00000000 400F6218 
+                       GPIOSET EQU              0x400F6218
+    5 00000000 400F6298 
+                       GPIOCLR EQU              0x400F6298
+    6 00000000 FFFF1000 
+                       LED     EQU              0xFFFF1000
+    7 00000000 00000080 
+                       DELAY   EQU              0x80
+    8 00000000         
+    9 00000000         
+   10 00000000                 EXPORT           __initial_sp_M0                
+[WEAK]
+   11 00000000                 EXPORT           Reset_Handler_M0               
+[WEAK]
+   12 00000000                 EXPORT           NMI_Handler_M0                 
+[WEAK]
+   13 00000000                 EXPORT           HardFault_Handler_M0           
+[WEAK]
+   14 00000000                 EXPORT           MemManage_Handler_M0           
+[WEAK]
+   15 00000000                 EXPORT           BusFault_Handler_M0            
+[WEAK]
+   16 00000000                 EXPORT           UsageFault_Handler_M0          
+[WEAK]
+   17 00000000                 EXPORT           SVC_Handler_M0                 
+[WEAK]
+   18 00000000                 EXPORT           DebugMon_Handler_M0            
+[WEAK]
+   19 00000000                 EXPORT           PendSV_Handler_M0              
+[WEAK]
+   20 00000000                 EXPORT           SysTick_Handler_M0             
+[WEAK]
+   21 00000000                 EXPORT           DAC_IRQHandler_M0              
+[WEAK]
+   22 00000000                 EXPORT           IPC_Master2Slave_IRQHandler_M0 
+[WEAK]
+   23 00000000         
+   24 00000000                 AREA             STACK, NOINIT, READWRITE
+   25 00000000         Stack_Mem_M0
+                               SPACE            STACK_SIZE
+   26 00000400         __initial_sp_M0
+   27 00000400         
+   28 00000400                 AREA             M0, CODE, READONLY
+   29 00000000         Reset_Handler_M0
+                               PROC
+   30 00000000         
+   31 00000000                 THUMB
+   32 00000000 4808            ldr              r0,=GPIOSET
+   33 00000002 4909            ldr              r1,=GPIOCLR
+   34 00000004 4A09            ldr              r2,=LED
+   35 00000006         
+   36 00000006         ;Main loop
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   37 00000006         lpb
+   38 00000006         
+   39 00000006         ;Delay
+   40 00000006         ;movs r5, #DELAY
+   41 00000006         ;first1
+   42 00000006         ;movs r4, #DELAY
+   43 00000006         ;outer1
+   44 00000006         ;movs r3, #DELAY
+   45 00000006         
+   46 00000006         ;inner1
+   47 00000006         ;subs r3, #0x1
+   48 00000006         ;cmp r3, #0x0
+   49 00000006         ;bne inner1
+   50 00000006         
+   51 00000006         ;subs r4, #0x1
+   52 00000006         ;cmp r4, #0x0
+   53 00000006         ;bne outer1
+   54 00000006         
+   55 00000006         ;subs r5, #0x1
+   56 00000006         ;cmp r5, #0x0
+   57 00000006         ;bne first1
+   58 00000006         
+   59 00000006         ;Turn the LED on
+   60 00000006 6002            str              r2, [r0]
+   61 00000008         
+   62 00000008         ;Delay
+   63 00000008         ;movs r5, #DELAY
+   64 00000008         ;first2
+   65 00000008         ;movs r4, #DELAY
+   66 00000008         ;outer2
+   67 00000008         ;movs r3, #DELAY
+   68 00000008         
+   69 00000008         ;inner2
+   70 00000008         ;subs r3, #0x1
+   71 00000008         ;cmp r3, #0x0
+   72 00000008         ;bne inner2
+   73 00000008         
+   74 00000008         ;subs r4, #0x1
+   75 00000008         ;cmp r4, #0x0
+   76 00000008         ;bne outer2
+   77 00000008         
+   78 00000008         ;subs r5, #0x1
+   79 00000008         ;cmp r5, #0x0
+   80 00000008         ;bne first2
+   81 00000008         
+   82 00000008         
+   83 00000008         ;Turn the LED off
+   84 00000008         ;ledoff
+   85 00000008 600A            str              r2, [r1]
+   86 0000000A         
+   87 0000000A E7FC            b                lpb
+   88 0000000C                 ENDP
+   89 0000000C         
+   90 0000000C         NMI_Handler_M0
+                               PROC
+   91 0000000C E7FE            b                NMI_Handler_M0
+   92 0000000E                 ENDP
+   93 0000000E         
+   94 0000000E         HardFault_Handler_M0
+
+
+
+ARM Macro Assembler    Page 3 
+
+
+                               PROC
+   95 0000000E E7FE            b                HardFault_Handler_M0
+   96 00000010                 ENDP
+   97 00000010         
+   98 00000010         MemManage_Handler_M0
+                               PROC
+   99 00000010 E7FE            b                MemManage_Handler_M0
+  100 00000012                 ENDP
+  101 00000012         
+  102 00000012         BusFault_Handler_M0
+                               PROC
+  103 00000012 E7FE            b                BusFault_Handler_M0
+  104 00000014                 ENDP
+  105 00000014         
+  106 00000014         UsageFault_Handler_M0
+                               PROC
+  107 00000014 E7FE            b                UsageFault_Handler_M0
+  108 00000016                 ENDP
+  109 00000016         
+  110 00000016         SVC_Handler_M0
+                               PROC
+  111 00000016 E7FE            b                SVC_Handler_M0
+  112 00000018                 ENDP
+  113 00000018         
+  114 00000018         DebugMon_Handler_M0
+                               PROC
+  115 00000018 E7FE            b                DebugMon_Handler_M0
+  116 0000001A                 ENDP
+  117 0000001A         
+  118 0000001A         PendSV_Handler_M0
+                               PROC
+  119 0000001A E7FE            b                PendSV_Handler_M0
+  120 0000001C                 ENDP
+  121 0000001C         
+  122 0000001C         SysTick_Handler_M0
+                               PROC
+  123 0000001C E7FE            b                SysTick_Handler_M0
+  124 0000001E                 ENDP
+  125 0000001E         
+  126 0000001E         DAC_IRQHandler_M0
+                               PROC
+  127 0000001E E7FE            b                DAC_IRQHandler_M0
+  128 00000020                 ENDP
+  129 00000020         
+  130 00000020         IPC_Master2Slave_IRQHandler_M0
+                               PROC
+  131 00000020 E7FE            b                IPC_Master2Slave_IRQHandler_M0
+  132 00000022                 ENDP
+  133 00000022                 END
+              00 00 400F6218 
+              400F6298 
+              FFFF1000 
+Command Line: --debug --xref --cpu=Cortex-M4.fp --apcs=interwork --depend=M0.d 
+-oM0.o -IC:\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\NXP
+\LPC43xx --list=M0.lst M0.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+STACK 00000000
+
+Symbol: STACK
+   Definitions
+      At line 24 in file M0.s
+   Uses
+      None
+Comment: STACK unused
+Stack_Mem_M0 00000000
+
+Symbol: Stack_Mem_M0
+   Definitions
+      At line 25 in file M0.s
+   Uses
+      None
+Comment: Stack_Mem_M0 unused
+__initial_sp_M0 00000400
+
+Symbol: __initial_sp_M0
+   Definitions
+      At line 26 in file M0.s
+   Uses
+      At line 10 in file M0.s
+Comment: __initial_sp_M0 used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+BusFault_Handler_M0 00000012
+
+Symbol: BusFault_Handler_M0
+   Definitions
+      At line 102 in file M0.s
+   Uses
+      At line 15 in file M0.s
+      At line 103 in file M0.s
+
+DAC_IRQHandler_M0 0000001E
+
+Symbol: DAC_IRQHandler_M0
+   Definitions
+      At line 126 in file M0.s
+   Uses
+      At line 21 in file M0.s
+      At line 127 in file M0.s
+
+DebugMon_Handler_M0 00000018
+
+Symbol: DebugMon_Handler_M0
+   Definitions
+      At line 114 in file M0.s
+   Uses
+      At line 18 in file M0.s
+      At line 115 in file M0.s
+
+HardFault_Handler_M0 0000000E
+
+Symbol: HardFault_Handler_M0
+   Definitions
+      At line 94 in file M0.s
+   Uses
+      At line 13 in file M0.s
+      At line 95 in file M0.s
+
+IPC_Master2Slave_IRQHandler_M0 00000020
+
+Symbol: IPC_Master2Slave_IRQHandler_M0
+   Definitions
+      At line 130 in file M0.s
+   Uses
+      At line 22 in file M0.s
+      At line 131 in file M0.s
+
+M0 00000000
+
+Symbol: M0
+   Definitions
+      At line 28 in file M0.s
+   Uses
+      None
+Comment: M0 unused
+MemManage_Handler_M0 00000010
+
+Symbol: MemManage_Handler_M0
+   Definitions
+      At line 98 in file M0.s
+   Uses
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+      At line 14 in file M0.s
+      At line 99 in file M0.s
+
+NMI_Handler_M0 0000000C
+
+Symbol: NMI_Handler_M0
+   Definitions
+      At line 90 in file M0.s
+   Uses
+      At line 12 in file M0.s
+      At line 91 in file M0.s
+
+PendSV_Handler_M0 0000001A
+
+Symbol: PendSV_Handler_M0
+   Definitions
+      At line 118 in file M0.s
+   Uses
+      At line 19 in file M0.s
+      At line 119 in file M0.s
+
+Reset_Handler_M0 00000000
+
+Symbol: Reset_Handler_M0
+   Definitions
+      At line 29 in file M0.s
+   Uses
+      At line 11 in file M0.s
+Comment: Reset_Handler_M0 used once
+SVC_Handler_M0 00000016
+
+Symbol: SVC_Handler_M0
+   Definitions
+      At line 110 in file M0.s
+   Uses
+      At line 17 in file M0.s
+      At line 111 in file M0.s
+
+SysTick_Handler_M0 0000001C
+
+Symbol: SysTick_Handler_M0
+   Definitions
+      At line 122 in file M0.s
+   Uses
+      At line 20 in file M0.s
+      At line 123 in file M0.s
+
+UsageFault_Handler_M0 00000014
+
+Symbol: UsageFault_Handler_M0
+   Definitions
+      At line 106 in file M0.s
+   Uses
+      At line 16 in file M0.s
+      At line 107 in file M0.s
+
+lpb 00000006
+
+Symbol: lpb
+
+
+
+ARM Macro Assembler    Page 3 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 37 in file M0.s
+   Uses
+      At line 87 in file M0.s
+Comment: lpb used once
+14 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+DELAY 00000080
+
+Symbol: DELAY
+   Definitions
+      At line 7 in file M0.s
+   Uses
+      None
+Comment: DELAY unused
+GPIOCLR 400F6298
+
+Symbol: GPIOCLR
+   Definitions
+      At line 5 in file M0.s
+   Uses
+      At line 33 in file M0.s
+Comment: GPIOCLR used once
+GPIOSET 400F6218
+
+Symbol: GPIOSET
+   Definitions
+      At line 4 in file M0.s
+   Uses
+      At line 32 in file M0.s
+Comment: GPIOSET used once
+LED FFFF1000
+
+Symbol: LED
+   Definitions
+      At line 6 in file M0.s
+   Uses
+      At line 34 in file M0.s
+Comment: LED used once
+STACK_SIZE 00000400
+
+Symbol: STACK_SIZE
+   Definitions
+      At line 1 in file M0.s
+   Uses
+      At line 25 in file M0.s
+Comment: STACK_SIZE used once
+Sign_Value 5A5A5A5A
+
+Symbol: Sign_Value
+   Definitions
+      At line 2 in file M0.s
+   Uses
+      None
+Comment: Sign_Value unused
+6 symbols
+356 symbols in table
